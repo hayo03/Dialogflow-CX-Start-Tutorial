@@ -3,8 +3,6 @@
 ### Content
 - ##### [Introduction](#intro)
 - ##### [Dialogflow CX Setup ](#Setup)
-- ###### [Create a project](#project)
-- ###### [Build an agent](#agent)
 - ##### [Creating a simple welcome message](#welcomemessage)
 - ##### [Creating a single-flow agent](#single-flow)
 - ##### [Creating multiple-flow agent](#multiple-flow)
