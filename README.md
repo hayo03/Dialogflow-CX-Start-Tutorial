@@ -24,7 +24,11 @@
 4. Click Save.<br> 
 
 ## <a name="welcomemessage "></a>Exploring the created agent 
-The created agent has a default Start Flow with a start page that comes with default welcome intent. Withing this default setting, the agent can handle a basic conversation with only a welcome message. To test your new agent:
+The created agent has a default Start Flow with a start page that comes with default welcome intent. Withing this default setting, the agent can handle a basic conversation with only a welcome message. 
+
+![tt](images/agent_default.png)
+
+To test your new agent:
 1. Click the Test Agent button to open the simulator.
 2. Enter hello in the text entry and press enter.
 3. The agent responds with a default welcome response.
