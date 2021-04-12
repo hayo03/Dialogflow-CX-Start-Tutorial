@@ -49,7 +49,7 @@ To edit the welcome response message:
 
 
 
-## <a name="single-flow "></a>Managing multiple flows 
+## <a name="single-flow "></a>Managing Flows & Pages
 So far, the agent has one flow with the start page. In this section, we will add two flows that handle requests about the weather forecast and restaurant reservations. The design of these flows is like the following:
 
 ![tt](images/flows.svg)
