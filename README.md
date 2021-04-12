@@ -14,8 +14,8 @@
 ## <a name="intro"></a>Introduction
 
 ## <a name="Setup"></a>Dialogflow CX Setup 
-1. To use services provided by Google Cloud, you need to create a project using [DF-CX console](https://dialogflow.cloud.google.com/cx/projects) <br>
-2. Choose the project you just created and click Create agent.<br>
+1. To use services provided by Google Cloud, you need to create a project using Google Cloud Console (https://console.cloud.google.com/) and enable the Dialogflow API.
+2. Using [DF-CX console](https://dialogflow.cloud.google.com/cx/projects), choose the project you just created and click Create agent.<br>
 3. Complete the form for basic agent settings:<br>
    *You can choose any name.<br>
    *Select your preferred location. Click the Edit button if you want to change advanced location settings.<br>
