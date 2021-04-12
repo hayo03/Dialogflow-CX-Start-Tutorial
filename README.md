@@ -39,12 +39,10 @@ To edit the welcome response message:
 2. Select the Default Start Flow in the Flows section.
 3. Click the Start node in the graph. This is the start page for the Default Start Flow.
 4. Find the intent route with the Default Welcome Intent as an intent requirement and click it. This opens a panel to edit the intent route information.
-5. Find the fulfillment section and delete all response messages, then add Hello, this is a demo virtual agent. How can I help you? as the only response.
-Click Save. Close the intent route editing panel.
+5. Find the fulfillment section and delete all response messages, then add "Hello, this is a demo virtual agent. How can I help you? as the only response".
+6. Click Save and Close the intent route editing panel.
+7. Test the updated welcome response message
 
-To test the updated welcome response message
-1. Click the Test Agent button to open the simulator.
-2. Enter hello in the text entry and press enter, the agent responds with your new message.
 
 
 
