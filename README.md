@@ -4,9 +4,9 @@
 - ##### [Introduction](#intro)
 - ##### [Dialogflow CX Setup ](#Setup)
 - ##### [Creating a simple welcome message](#welcomemessage)
-- ##### [Creating a single-flow agent](#single-flow)
-- ##### [Creating multiple-flow agent](#multiple-flow)
-- ##### [How reuse information from previous conversation turns](#reuseinformatione)
+- ##### [Managing Flows & Pages](#FlowsandPages)
+- ##### [Reusing information between flows](#reuseinformatione)
+- ##### [Building a webhook](#webhook)
 - ##### [Testing the completed agent](#Testing)
 - ##### [Conclusion](#conclu)
 
@@ -49,7 +49,7 @@ To edit the welcome response message:
 
 
 
-## <a name="single-flow "></a>Managing Flows & Pages
+## <a name="FlowsandPages "></a>Managing Flows & Pages
 So far, the agent has one flow with the start page. In this section, we will add two flows that handle requests about the weather forecast and restaurant reservations. The design of these flows is like the following:
 
 ![tt](images/flows.svg)
@@ -66,9 +66,8 @@ To create the intent:
   4. For each phrase that contains a city, annotate the city with a city parameter and the @geo-city custom entity type.
   5. Click Save 
 
-## <a name="multiple-flow "></a>Creating multiple-flow agent
-
-## <a name="reuseinformation"></a>How reuse information from previous conversation turns?
+## <a name="reuseinformation"></a>Reusing information between flows?
+## <a name="webhook "></a>Building a webhook
 
 ## <a name="Testing"></a>Testing the completed agent
 
