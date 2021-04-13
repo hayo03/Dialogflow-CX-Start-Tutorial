@@ -55,10 +55,10 @@ So far, the agent has one flow with the start page. In this section, we will add
 ![tt](images/flows.svg)
 
 <b> Weather forecast flow: </b> allows users to ask about weather forecast information in a given city. Before build it let create the intent that once matched, the flow will be called to handle the user request. 
-<b> Intent: </b> weather.current
-<b> Parameter: city
-<b> Entity type: geo-city
-<b> Training utterances: [utterances.text] (https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/intents/SearchRestaurant.txt) 
+<b> Intent: </b> weather.current <br>
+<b> Parameter:</b> city<br>
+<b> Entity type:</b> geo-city<br>
+<b> Training utterances:</b> [utterances.text] (https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/intents/SearchRestaurant.txt) <br>
 To create the intent: 
   1. Select the Manage tab.
   2. Click Entity Types, click +Create, set the name to size geo-city, add these entity entries (Paris, Lyon, Evry, ) and click Save
@@ -66,7 +66,7 @@ To create the intent:
   4. For each phrase that contains a city, annotate the city with a city parameter and the @geo-city custom entity type.
   5. Click Save 
 
-## <a name="reuseinformation"></a>Reusing information between flows?
+## <a name="reuseinformation"></a>Reusing information between flows
 ## <a name="webhook "></a>Building a webhook
 
 ## <a name="Testing"></a>Testing the completed agent
