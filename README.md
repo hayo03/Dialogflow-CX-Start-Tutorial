@@ -52,8 +52,9 @@ So far, the agent has one flow with the start page. In this section, we will add
 <b> Weather forecast flow: </b> it is trriggred when users ask about weather forecast information in a given city. To create this flow: 
 
 1.Click the Start node in the graph <br>
-2.Click Routes add + button. The intent route editing panel opens.<br>
-3.In the Intent section, select New intent and create the following intent and enter its training phrases: <br>
+2.Click Routes add + button. The route editing panel opens.<br>
+3. In the transition section, choose Flow option and select New flow and name it as "Weather forecast"
+4. Back to the Intent section, select New intent and create the following intent and enter its training phrases: <br>
 <b> Intent: </b> weather.current <br>
 <b> Training utterances:</b> [utterances.text] (https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/intents/SearchRestaurant.txt) <br>
 4. Click Save <br>
