@@ -51,17 +51,17 @@ So far, the agent has one flow with the start page. In this section, we will add
 
 <b> Weather forecast flow: </b> it is trriggred when users ask about weather forecast information in a given city. To create this flow: 
 
-1.Click the Start node in the graph
-2.Click Routes add + button. The intent route editing panel opens.
-3.In the Intent section, select New intent and create the following intent and enter its training phrases: 
+1.Click the Start node in the graph <br>
+2.Click Routes add + button. The intent route editing panel opens.<br>
+3.In the Intent section, select New intent and create the following intent and enter its training phrases: <br>
 <b> Intent: </b> weather.current <br>
 <b> Training utterances:</b> [utterances.text] (https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/intents/SearchRestaurant.txt) <br>
 4. Click Save <br>
 As you notice city parameter is not detected automatically so we have to create it, but we need to first create its entity type "geo-city"
      <b> Parameter:</b> city<br>
      <b> Entity type:</b> geo-city<br>
-5. Select the Manage tab and Click on Entity Types, click +Create, set the name to size geo-city, add some entity entries for the city (Paris, Lyon, Evry, ) and click Save
-6. Back to intents tab and slect "weather.current" intent. For each phrase that contains a city, annotate the city with a city parameter and the @geo-city custom entity type.
+5. Select the Manage tab and Click on Entity Types, click +Create, set the name to size geo-city, add some entity entries for the city (Paris, Lyon, Evry, ) and click Save<br>
+6. Back to intents tab and slect "weather.current" intent. For each phrase that contains a city, annotate the city with a city parameter and the @geo-city custom entity type.<br>
 7.  Click Save 
 
 
