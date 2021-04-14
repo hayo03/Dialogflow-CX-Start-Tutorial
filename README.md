@@ -62,8 +62,8 @@ As you notice city parameter is not detected automatically so we have to create 
      <b> Parameter:</b> city<br>
      <b> Entity type:</b> geo-city<br>
 5. Select the Manage tab and Click on Entity Types, click +Create, set the name to size geo-city, add some entity entries for the city (Paris, Lyon, Evry, ) and click Save<br>
-6. Back to intents tab and slect "weather.current" intent. For each phrase that contains a city, annotate the city with a city parameter and the @geo-city custom entity type.<br>
-7.  Click Save 
+6. Back to intents tab and slect "weather.current" intent. For each phrase that contains a city, annotate the city with a city parameter and the @geo-city custom entity type and  Click Save <br>
+
 
 
 
