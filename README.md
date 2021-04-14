@@ -44,23 +44,19 @@ To edit the welcome response message:
 6. Click Save and Close the intent route editing panel.
 7. Test the updated welcome response message
 
-
-
-
-
-
-## <a name="FlowsandPages "></a>Managing Flows & Pages
+## <a name="FlowsandPages"></a>Managing Flows & Pages
 So far, the agent has one flow with the start page. In this section, we will add two flows that handle requests about the weather forecast and restaurant reservations. The design of these flows is like the following:
 
 ![tt](images/flows.svg)
 
 <b> Weather forecast flow: </b> it is trriggred when users ask about weather forecast information in a given city. To create this flow: 
+
 1.Click the Start node in the graph
 2.Click Routes add + button. The intent route editing panel opens.
 3.In the Intent section, select New intent and create the following intent and enter its training phrases: 
 <b> Intent: </b> weather.current <br>
 <b> Training utterances:</b> [utterances.text] (https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/intents/SearchRestaurant.txt) <br>
-4. Click Save 
+4. Click Save <br>
 As you notice city parameter is not detected automatically so we have to create it, but we need to first create its entity type "geo-city"
      <b> Parameter:</b> city<br>
      <b> Entity type:</b> geo-city<br>
