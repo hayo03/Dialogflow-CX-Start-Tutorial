@@ -53,7 +53,7 @@ So far, the agent has one flow with the start page. In this section, we will add
 
 1.Click the Start node in the graph <br>
 2.Click Routes add + button. The route editing panel opens.<br>
-3. In the transition section, choose Flow option and select New flow and name it as "Weather forecast"
+3. In the transition section, choose Flow option and select New flow and name it as "Weather forecast". <br>
 4. Back to the Intent section, select New intent and create the following intent and enter its training phrases: <br>
 <b> Intent: </b> weather.current <br>
 <b> Training utterances:</b> [utterances.text] (https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/intents/SearchRestaurant.txt) <br>
@@ -64,6 +64,7 @@ As you notice city parameter is not detected automatically so we have to create 
 5. Select the Manage tab and Click on Entity Types, click +Create, set the name to size geo-city, add some entity entries for the city (Paris, Lyon, Evry, ) and click Save<br>
 6. Back to intents tab and slect "weather.current" intent. For each phrase that contains a city, annotate the city with a city parameter and the @geo-city custom entity type.<br>
 7.  Click Save 
+
 
 
 
