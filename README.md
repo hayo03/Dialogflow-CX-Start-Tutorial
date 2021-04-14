@@ -63,7 +63,22 @@ As you notice city parameter is not detected automatically so we have to create 
      <b> Entity type:</b> geo-city<br>
 5. Select the Manage tab and Click on Entity Types, click +Create, set the name to size geo-city, add some entity entries for the city (Paris, Lyon, Evry, ) and click Save<br>
 6. Back to intents tab and slect "weather.current" intent. For each phrase that contains a city, annotate the city with a city parameter and the @geo-city custom entity type and  Click Save <br>
-7. 
+7. Create the page that will collect city information from user and handle its request. To do so, click on "Start" page in Weather forecast flow and create a new Route:<br>
+      Intent: GetWeather<br>
+      Tranistion: New Page "Get Weather"<br>
+8. Click on "Get Weather" page and create a new parameter:<br>
+   - Parameter name: city<br>
+   - Entity type: @geo-city<br>
+   - Check "Required"<br>
+   - Fulfillement (Agent says): What is the city name?<br>
+9. Add a new Route:<br>
+   - Condition: $page.params.status="FINAL" <br>
+   - Fulfillement (What agent says): <br>
+  
+<b> Test the Weather forecast: </b><br>
+1. Click the Test Agent button to open the simulator.<br>
+2. Enter "What does the weather forecast look like?" and press enter.<br>
+3. The agent will provides you the weather forecast information.<br>
 
 
 
