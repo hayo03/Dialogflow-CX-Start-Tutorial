@@ -54,17 +54,21 @@ So far, the agent has one flow with the start page. In this section, we will add
 
 ![tt](images/flows.svg)
 
-<b> Weather forecast flow: </b> allows users to ask about weather forecast information in a given city. Before build it let create the intent that once matched, the flow will be called to handle the user request. 
+<b> Weather forecast flow: </b> it is trriggred when users ask about weather forecast information in a given city. To create this flow: 
+1.Click the Start node in the graph
+2.Click Routes add + button. The intent route editing panel opens.
+3.In the Intent section, select New intent and create the following intent and enter its training phrases: 
 <b> Intent: </b> weather.current <br>
-<b> Parameter:</b> city<br>
-<b> Entity type:</b> geo-city<br>
 <b> Training utterances:</b> [utterances.text] (https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/intents/SearchRestaurant.txt) <br>
-To create the intent: 
-  1. Select the Manage tab.
-  2. Click Entity Types, click +Create, set the name to size geo-city, add these entity entries (Paris, Lyon, Evry, ) and click Save
-  3. Click Intents, click Create, enter weather.current for the intent name and enter the training phrases in [utterances.text](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/intents/SearchRestaurant.txt).
-  4. For each phrase that contains a city, annotate the city with a city parameter and the @geo-city custom entity type.
-  5. Click Save 
+4. Click Save 
+As you notice city parameter is not detected automatically so we have to create it, but we need to first create its entity type "geo-city"
+     <b> Parameter:</b> city<br>
+     <b> Entity type:</b> geo-city<br>
+5. Select the Manage tab and Click on Entity Types, click +Create, set the name to size geo-city, add some entity entries for the city (Paris, Lyon, Evry, ) and click Save
+6. Back to intents tab and slect "weather.current" intent. For each phrase that contains a city, annotate the city with a city parameter and the @geo-city custom entity type.
+7.  Click Save 
+
+
 
 ## <a name="reuseinformation"></a>Reusing information between flows
 ## <a name="webhook "></a>Building a webhook
