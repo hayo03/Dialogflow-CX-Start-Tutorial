@@ -46,40 +46,41 @@ To edit the welcome response message:
 
 ## <a name="FlowsandPages"></a>Managing Flows & Pages
 So far, the agent has one flow with the start page. In this section, we will add two flows that handle requests about the weather forecast and restaurant reservations. The design of these flows is like the following:
-
 ![tt](images/flows.svg)
-
-<b> Weather forecast flow: </b> it is trriggred when users ask about weather forecast information in a given city. To create this flow: 
-
-1.Click the Start node in the graph <br>
-2.Click Routes add + button. The route editing panel opens.<br>
-3. In the transition section, choose Flow option and select New flow and name it as "Weather forecast". <br>
-4. Back to the Intent section, select New intent and create the following intent and enter its training phrases: <br>
-<b> Intent: </b> weather.current <br>
-<b> Training utterances:</b> [utterances.text](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/intents/SearchRestaurant.txt) <br>
-4. Click Save <br>
-As you notice city parameter is not detected automatically so we have to create it, but we need to first create its entity type "geo-city"
+<b> Weather forecast flow: </b> allows users to ask about weather forecast information in a given city. Before building it, we need to create the intent that once matched, the flow will be called to handle the user request. 
+<b>Create intent: <b>
+1. Select the Manage tab.
+2. Click Intents, click Create, enter weather.current as an intent name and enter the training phrases in utterances.text.
+3. Click Save <br> 
+<b> Create entity types and parameters:<b> <br>
+As you notice the city parameter is not detected automatically so we have to create it, but we need to first create its entity type "geo-city". <br>
      <b> Parameter:</b> city<br>
      <b> Entity type:</b> geo-city<br>
-5. Select the Manage tab and Click on Entity Types, click +Create, set the name to size geo-city, add some entity entries for the city (Paris, Lyon, Evry, ) and click Save<br>
-6. Back to intents tab and slect "weather.current" intent. For each phrase that contains a city, annotate the city with a city parameter and the @geo-city custom entity type and  Click Save <br>
-7. Create the page that will collect city information from user and handle its request. To do so, click on "Start" page in Weather forecast flow and create a new Route:<br>
-      Intent: GetWeather<br>
-      Tranistion: New Page "Get Weather"<br>
-8. Click on "Get Weather" page and create a new parameter:<br>
+1. Select the Manage tab and Click on Entity Types, click +Create, set the name to size geo-city, add some entity entries for the city (Paris, Lyon, Evry, ) and click Save. <br>
+2. Back to the Intents tab and select "weather.current" intent. For each phrase that contains a city, annotate the city with a city parameter and the @geo-city custom entity type and  Click Save <br>
+             
+<b> Create Flow : </b> 
+1. Select the Build tab.
+2. Click Flows, click Create, enter Weather forecast as an flow name.
+<b> Create Page : </b> 
+Bu defaut, the Weather forecast flow has a special page named Start. When a flow is selected in the console, the start page is shown as a node on the graph. When a flow initially becomes active, this page becomes the current, active page. A start page does not have parameters or responses messages like normal pages. So we need to create page that will collect city information from user and handle its request (i.e., provide answer to the user).
+
+ 1. Click on "Start" page in Weather forecast flow 
+ 2. Click the add add button in the Pages section.
+ 3. Enter "Get current Weather" as a display name for the page.
+ 4. Click the settings more_vert button next to the page display name and select Edit.
+ 5. Create a new parameter:<br>
    - Parameter name: city<br>
    - Entity type: @geo-city<br>
    - Check "Required"<br>
-   - Fulfillement (Agent says): What is the city name?<br>
-9. Add a new Route:<br>
-   - Condition: $page.params.status="FINAL" <br>
-   - Fulfillement (What agent says): <br>
-  
+   - Fulfillement (Agent says): What is your city name?<br>
+
+<b> Create routes and transitions : </b> <br> 
+
 <b> Test the Weather forecast: </b><br>
 1. Click the Test Agent button to open the simulator.<br>
 2. Enter "What does the weather forecast look like?" and press enter.<br>
 3. The agent will provides you the weather forecast information.<br>
-
 
 
 
