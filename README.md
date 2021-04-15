@@ -63,8 +63,9 @@ As you notice the city parameter is not detected automatically so we have to cre
 
 <b>Create Flow : </b> 
 1. Select the Build tab.
-2. Click Flows, click Create, enter Weather forecast as an flow name. <br>
-<b> Create Page : </b> <br>
+2. Click Flows, click Create, enter Weather forecast as an flow name. 
+
+<b>Create Page : </b> <br>
 Bu defaut, the Weather forecast flow has a special page named Start. When a flow is selected in the console, the start page is shown as a node on the graph. When a flow initially becomes active, this page becomes the current, active page. A start page does not have parameters or responses messages like normal pages. So we need to create page that will collect city information from user and handle its request (i.e., provide answer to the user). <br>
  1. Click on "Start" page in Weather forecast flow 
  2. Click the add add button in the Pages section.
