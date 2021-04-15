@@ -77,15 +77,38 @@ Bu defaut, the Weather forecast flow has a special page named Start. When a flow
    - Check "Required"<br>
    - Fulfillement (Agent says): What is your city name?<br>
 
-<b> Create routes and transitions : </b> <br> 
+<b> Create Routes: </b> <br> 
+As you notice there is no link between different flows (i.e., Default Start Flow and Weather forecast Flow)  and the newly created page (get current weather). Without those links, the conversation between bot and user can not be handled. Therefore, Routes are introduced to define such links. We need to define three routes as follows: 
+1. Create a Route that transitions from the default start flow to  Weather forecast flow. This route should be called when the end-user asks for weather forecast information. To create this route:  <br>
+  - Select the Default Start Flow in the Flows section.
+  - Click the Start node in the graph. 
+  - Add the following intent route:
+      - Intent: weather.current
+      - Transition: choose Flow  and select “Weather forecast” flow
+  - Click Save
+
+2. Create a Route that transitions from the start page of the Weather forecast flow to get current weather page.  This route should be called when the intent “weather.current” is matched”. To create this route: <br> 
+   - Select the Weather forecast” Flow in the Flows section.
+   - Click the Start node in the graph. 
+   - Add the following intent route:
+       - Intent: weather.current
+       - Transition: choose Page  and select “Get current weather” page
+    - Click Save
+
+3. Create a route that transitions from “get current weather page” to End Flow page: this route should be called when all parameters are fulfilled. To create this route: <br> 
+   - Select the Weather forecast” Flow in the Flows section.
+   - Click the Start node in the graph. 
+   - Add the following intent route:
+       - condition: $page.params.status="FINAL"
+       - Transition: choose Page  and select “End Flow” page
+   - Click Save
+
+Congratulations! Now you can test your agent to test whether your flow is correctly defined:
 
 <b> Test the Weather forecast: </b><br>
 1. Click the Test Agent button to open the simulator.<br>
 2. Enter "What does the weather forecast look like?" and press enter.<br>
 3. The agent will provides you the weather forecast information.<br>
-
-
-
 
 ## <a name="reuseinformation"></a>Reusing information between flows
 ## <a name="webhook "></a>Building a webhook
