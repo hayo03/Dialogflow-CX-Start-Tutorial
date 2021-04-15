@@ -28,4 +28,4 @@ Restaurant reservation flow  allows users to search for restaurants and make res
       - Fulfillement:  This one serves $session.params.food food: Helow world Restaurant, Phone: +0000000, address : Helow world street, $session.params.location
       - Transition to the Page: Reservation
   5. Find by yourself the next steps toward complete the whole flow that should lead to a conversation like the following conversation example:
-  ![tt](Dialogflow-CX-Start-Tutorial/images/reservation_example.png)
+  ![tt](images/reservation_example.png)
