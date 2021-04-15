@@ -114,6 +114,16 @@ Congratulations! Now you can test your agent to test whether your flow is correc
 ## Exercice
 Create and test the Restaurant reservation flow. [Here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/tree/main/Exercice) we provide some guidance steps.
 ## <a name="reuseinformation"></a>Reusing information between flows
+After completing both flows, the agent will be able to handle the user requests about both weather forecast information and restaurant reservation. However, when you interact with the agent, you will notice that it may ask for information already provided by a user. As shown below, the agent asks the user "where are you" despite the fact that he already provided his city in one of the previous turns. <br> 
+
+To avoid such an issue, the agent needs to exploit the context well, i.e.,  any information that can be leveraged from the previous conversation turns or any other sources (e.g., user profile). In this tutorial, we are interested in exploiting the previous conversation turns as the main source for the context. Indeed, in Dialogflow CX,  there is an interesting feature called Parameter preset (in the fulfillment section) that allows to set or override parameter values. So we will exploit this feature in order to reuse information from sessions parameters that represents parameters fulfilled in the previous turns. To do so : <br>
+1. Select “current weather” page in Weather forecast flow and edit the already defined route
+2. Find Parameter preset feature within the  fulfillment section and 
+3. Click on Add Parameter and add the following:
+   - Parameter: location; 
+   - Value: "$session.params.city" 
+4. Follow the similar steps and add (Parameter: city; Value: "$session.params.location") in “Search restaurant” page.
+5. Test again the agent, what do you notice? 
 ## <a name="webhook "></a>Building a webhook
 
 ## <a name="Testing"></a>Testing the completed agent
