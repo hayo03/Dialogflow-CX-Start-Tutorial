@@ -111,9 +111,8 @@ Congratulations! Now you can test your agent to test whether your flow is correc
 2. Enter "What does the weather forecast look like?" and press enter.<br>
 3. The agent will provides you the weather forecast information.<br>
 
-<b> Exercice: Create Restaurant reservation flow </b> <br>
-
-  
+## Exercice
+Create and test the Restaurant reservation flow. [Here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/tree/main/Exercice) we provide some guidance steps.
 ## <a name="reuseinformation"></a>Reusing information between flows
 ## <a name="webhook "></a>Building a webhook
 
