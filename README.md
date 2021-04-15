@@ -18,10 +18,10 @@ This guide shows how to use the Dialogflow CX Console to build and test a simple
 1. To use services provided by Google Cloud, you need to create a project using [Google Cloud Console](https://console.cloud.google.com/) and enable the Dialogflow API.
 2. Using [DF-CX console](https://dialogflow.cloud.google.com/cx/projects), choose the project you just created and click Create agent.<br>
 3. Complete the form for basic agent settings:<br>
-   *You can choose any name.<br>
-   *Select your preferred location. <br>
-   *Select your preferred time zone.<br>
-   *Select the default language for your agent.<br>
+   - You can choose any name.<br>
+   - Select your preferred location. <br>
+   - Select your preferred time zone.<br>
+   - Select the default language for your agent.<br>
 4. Click Save.<br> 
 
 ## <a name="welcomemessage "></a>Exploring the created agent 
@@ -56,8 +56,8 @@ So far, the agent has one flow with the start page. In this section, we will add
 
 <b>Create entity types and parameters:</b> <br>
 As you notice the city parameter is not detected automatically so we have to create it, but we need to first create its entity type "geo-city". <br>
-     <b> Parameter:</b> city<br>
-     <b> Entity type:</b> geo-city<br>
+  - <b> Parameter:</b> city<br>
+  - <b> Entity type:</b> geo-city<br>
 1. Select the Manage tab and Click on Entity Types, click +Create, set the name to size geo-city, add some entity entries for the city (Paris, Lyon, Evry, ) and click Save. <br>
 2. Back to the Intents tab and select "weather.current" intent. For each phrase that contains a city, annotate the city with a city parameter and the @geo-city custom entity type and  Click Save.
 
@@ -100,6 +100,7 @@ As you notice there is no link between different flows (i.e., Default Start Flow
    - Click the Start node in the graph. 
    - Add the following intent route:
        - condition: $page.params.status="FINAL"
+       - Fulfillement (What the Agent will aswer to the user):  There is clear sky in $session.params.city
        - Transition: choose Page  and select “End Flow” page
    - Click Save
 
