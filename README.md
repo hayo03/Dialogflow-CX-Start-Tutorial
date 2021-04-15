@@ -140,7 +140,8 @@ Restaurant reservation flow  allows users to search for restaurants and make res
       - Condition: $page.params.status="FINAL"
       - Fulfillement:  This one serves $session.params.food food: Helow world Restaurant, Phone: +0000000, address : Helow world street, $session.params.location
       - Transition to the Page: Reservation
-  5. Find by yourself the next steps toward complete the whole flow that should lead to a conversation like the following:
+  5. Find by yourself the next steps toward complete the whole flow that should lead to a conversation like this [conversation example](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/examples/reservation_conversation.pdf)
+  
 ## <a name="reuseinformation"></a>Reusing information between flows
 ## <a name="webhook "></a>Building a webhook
 
