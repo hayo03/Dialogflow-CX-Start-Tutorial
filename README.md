@@ -47,8 +47,9 @@ To edit the welcome response message:
 ## <a name="FlowsandPages"></a>Managing Flows & Pages
 So far, the agent has one flow with the start page. In this section, we will add two flows that handle requests about the weather forecast and restaurant reservations. The design of these flows is like the following:
 ![tt](images/flows.svg)
-<b> Weather forecast flow: </b> allows users to ask about weather forecast information in a given city. Before building it, we need to create the intent that once matched, the flow will be called to handle the user request. 
-<b>Create intent: <b>
+
+<b> Weather forecast flow: </b> allows users to ask about weather forecast information in a given city. Before building it, we need to create the intent that once matched, the flow will be called to handle the user request. <br>
+<b>Create intent: </b>
 1. Select the Manage tab.
 2. Click Intents, click Create, enter weather.current as an intent name and enter the training phrases in utterances.text.
 3. Click Save <br> 
@@ -61,10 +62,9 @@ As you notice the city parameter is not detected automatically so we have to cre
              
 <b> Create Flow : </b> 
 1. Select the Build tab.
-2. Click Flows, click Create, enter Weather forecast as an flow name.
-<b> Create Page : </b> 
-Bu defaut, the Weather forecast flow has a special page named Start. When a flow is selected in the console, the start page is shown as a node on the graph. When a flow initially becomes active, this page becomes the current, active page. A start page does not have parameters or responses messages like normal pages. So we need to create page that will collect city information from user and handle its request (i.e., provide answer to the user).
-
+2. Click Flows, click Create, enter Weather forecast as an flow name. <br>
+<b> Create Page : </b> <br>
+Bu defaut, the Weather forecast flow has a special page named Start. When a flow is selected in the console, the start page is shown as a node on the graph. When a flow initially becomes active, this page becomes the current, active page. A start page does not have parameters or responses messages like normal pages. So we need to create page that will collect city information from user and handle its request (i.e., provide answer to the user). <br>
  1. Click on "Start" page in Weather forecast flow 
  2. Click the add add button in the Pages section.
  3. Enter "Get current Weather" as a display name for the page.
