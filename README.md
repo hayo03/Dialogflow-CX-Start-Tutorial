@@ -52,14 +52,16 @@ So far, the agent has one flow with the start page. In this section, we will add
 <b>Create intent: </b>
 1. Select the Manage tab.
 2. Click Intents, click Create, enter weather.current as an intent name and enter the training phrases in utterances.text.
-3. Click Save <br> 
-<b> Create entity types and parameters:</b> <br>
+3. Click Save 
+
+<b>Create entity types and parameters:</b> <br>
 As you notice the city parameter is not detected automatically so we have to create it, but we need to first create its entity type "geo-city". <br>
      <b> Parameter:</b> city<br>
      <b> Entity type:</b> geo-city<br>
 1. Select the Manage tab and Click on Entity Types, click +Create, set the name to size geo-city, add some entity entries for the city (Paris, Lyon, Evry, ) and click Save. <br>
-2. Back to the Intents tab and select "weather.current" intent. For each phrase that contains a city, annotate the city with a city parameter and the @geo-city custom entity type and  Click Save <br>
-<b> Create Flow : </b> 
+2. Back to the Intents tab and select "weather.current" intent. For each phrase that contains a city, annotate the city with a city parameter and the @geo-city custom entity type and  Click Save.
+
+<b>Create Flow : </b> 
 1. Select the Build tab.
 2. Click Flows, click Create, enter Weather forecast as an flow name. <br>
 <b> Create Page : </b> <br>
