@@ -1,4 +1,4 @@
-<b> Create Restaurant reservation flow (Exercice) </b> <br>
+## Create Restaurant reservation flow 
 Restaurant reservation flow  allows users to search for restaurants and make reservations in a restaurant of their choice. To create this flow, you will almost follow the steps taken for Weather forecast Flow. 
 1. Create intents 
    - Intent: restaurant.search
@@ -28,4 +28,4 @@ Restaurant reservation flow  allows users to search for restaurants and make res
       - Fulfillement:  This one serves $session.params.food food: Helow world Restaurant, Phone: +0000000, address : Helow world street, $session.params.location
       - Transition to the Page: Reservation
   5. Find by yourself the next steps toward complete the whole flow that should lead to a conversation like the following conversation example:
-  ![tt](examples/reservation_conversation.pdf)
+  ![tt](Dialogflow-CX-Start-Tutorial/examples/reservation_conversation.pdf)
