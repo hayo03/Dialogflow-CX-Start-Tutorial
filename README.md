@@ -220,9 +220,10 @@ Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/we
 Once you get the required credentials and complete API_credentials.json file, open terminal, create a virtual environment and install required packages.
  - Operating system: macOS/OS X, Linux; 
 ```
+pip install virtualenv
 cd webhook_service
-virtualenv -p python3 venv
-source venv\Scripts\activate
+virtualenv -p python3 myenv
+source myenv/bin/activate
 pip install -r requirements.txt
 python webhook_service.py
 ```
@@ -231,8 +232,8 @@ python webhook_service.py
 
 ```
 cd webhook_service
-virtualenv -p python3 venv
-venv\Scripts\activate.bat
+python3 -m venv myenv
+myenv\Scripts\activate.bat
 pip install -r requirements.txt
 python webhook_service.py
 
