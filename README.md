@@ -140,7 +140,7 @@ Download and install Python from [Here](https://www.python.org/downloads/)
 ## Editor: 
 You can use gedit or [Visual studio code](https://code.visualstudio.com/download)
 ## Creating a webhook service using Python
-Create a folder and name it (e.g. webhook_service). Under this folder, we are going to create the following three files: webhook.py, API_manager.py, API_crendentials.json. 
+Create a folder and name it (e.g. webhook_service). Under this folder, we are going to create the following two files: webhook.py, API_crendentials.json. 
 - webhook.py: it is the webhook service that will handele the requests sent from the agent and provide back a response. We are going to use Flask (a light-weight python web framework ) for creating a webhook.
 
 ```
@@ -157,7 +157,7 @@ if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8081, debug=True)
 ```
 
-To handle the requests from the agent, we have to add a route in the router and define the function that will be executed when the endpoint is hit:
+To handle the requests from the agent, we have to add a route in the router and define the function (s) that will be executed when the endpoint is hit:
 
 ```
 @app.route('/my_webhook', methods=['POST'])
@@ -173,7 +173,12 @@ def post_webhook_dialogflow():
     # msg = 'hi'
     msg = invoke_api(fulfillment, slots)
     return answer_webhook(msg, session_id)
-
+```
+- invoke_api(fulfillment, slots_values_list): defines actions that should be executed for a given fulfillment. To keep it simple, we have one action that makes call to the [Open wetather API](https://openweathermap.org/api) to get current weather condition for a givin city.
+```
+```
+- answer_webhook(msg, session_id):  return the answer to the agent in json format.
+```
 def answer_webhook(msg, session_id):
     message= {"fulfillment_response": {
       
@@ -188,10 +193,13 @@ def answer_webhook(msg, session_id):
     }
     return Response(json.dumps(message), 200, mimetype='application/json')
 ```
-
-- API_manager.py:
-- API_crendentials.json:
-
+- API_crendentials.json: contain credential information needed to make calls to the [Open wetather API](https://openweathermap.org/api). Getting credential information requires creating an account in this API.
+```
+ "api.openweathermap":
+         {
+         "appid":"put here your openweathermap API key"
+        },
+```
 
 ## Deploy a webhook service using Ngrok
 ## Setup webhook in Dialogflow and test it
