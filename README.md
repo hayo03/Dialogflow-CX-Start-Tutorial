@@ -129,11 +129,7 @@ At this point, the created agent  can answer users only with static response mes
 ![tt](images/webhook.png)
 
 As the diagram above shows, when a fulfillment  that has a webhook is called, the Dialogflow API sends a webhook request to the webhook service.
-The webhook service receives the webhook request and takes any actions necessary, like calling external APIs, querying or updating a database, etc. It builds a response and sends a webhook response back to Dialogflow API. <br>
-- Webhoo request:
-- Webhook response:
-
-A webhook can be created in any server side programming language like Python, PHP or Node.js. We are going to use Python to create a webhook and Ngrok to deploy it using Ngrok. Let’s start building our own webhook for handling weather forecast requests. 
+The webhook service receives the webhook request and takes any actions necessary, like calling external APIs, querying or updating a database, etc. It builds a response and sends a webhook response back to Dialogflow API. A webhook can be created in any server side programming language like Python, PHP or Node.js. We are going to use Python to create a webhook and Ngrok to deploy it using Ngrok. Let’s start building our own webhook for handling weather forecast requests. 
 
 ## Install Python 3 
 Download and install Python from [Here](https://www.python.org/downloads/)
