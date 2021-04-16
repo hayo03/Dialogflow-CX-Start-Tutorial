@@ -176,6 +176,24 @@ def post_webhook_dialogflow():
 ```
 - invoke_api(fulfillment, slots_values_list): defines actions that should be executed for a given fulfillment. To keep it simple, we have one action that makes call to the [Open wetather API](https://openweathermap.org/api) to get current weather condition for a givin city.
 ```
+def invoke_api(fulfillment, slots_values_list):
+    print("\n\n\n\n\n=========> CALL API ",fulfillment)
+        if fulfillment == "GetWeather_fulfillment":
+        appid=getAPI_credential('api.openweathermap','appid')
+        url = 'http://api.openweathermap.org/data/2.5/weather?q=[%q%]&appid='+appid
+        for slot in slots_values_list:
+            url = url.replace('[%{}%]'.format(slot['name']),
+                              ' '.join(slot['value']) if isinstance(slot['value'], list) else slot['value'])
+        result = requests.get(url)
+        jsonResult = result.json()
+        if result.status_code == 200:
+            weatherCondition = jsonResult['weather'][0]['description']
+            reply = "There is {} in there.".format(weatherCondition)
+            print(reply)
+            return reply
+        else:
+            #print(jsonResult['message'])
+            return "Something wrong with the API."
 ```
 - answer_webhook(msg, session_id):  return the answer to the agent in json format.
 ```
