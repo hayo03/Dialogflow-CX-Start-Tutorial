@@ -157,6 +157,7 @@ if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8081, debug=True)
 
 '''
+
 To handle the requests from the agent, we have to add a route in the router and define the function that will be executed when the endpoint is hit:
 
 '''
@@ -188,6 +189,7 @@ def answer_webhook(msg, session_id):
     }
     return Response(json.dumps(message), 200, mimetype='application/json')
 '''
+
 - API_manager.py:
 - API_crendentials.json:
 
