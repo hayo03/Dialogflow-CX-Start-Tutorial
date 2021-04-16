@@ -125,9 +125,19 @@ To avoid such an issue, the agent needs to exploit the context well, i.e.,  any 
 4. Follow the similar steps and add (Parameter: city; Value: "$session.params.location") in “Search restaurant” page.
 5. Test again the agent, what do you notice? 
 ## <a name="webhook "></a>Building a webhook
-At this point, the created agent can answer users only with static response messages. But in real cases, we need to generate dynamic responses, validate collected data, or trigger actions on the backend.  Webhooks are introduced to handle all of this. 
+At this point, the created agent  can answer users only with static response messages. But in real cases, we need to generate dynamic responses, validate collected data, or trigger actions on the backend.  Webhooks are introduced to handle all of this.  They are simply the backend parts of the agent. The agent is the frontend part.
 
 ![tt](images/webhook.png)
+
+As the diagram above shows, when a fulfillment  that has a webhook is called, the Dialogflow API sends a webhook request to the webhook service.
+The webhook service receives the webhook request and takes any actions necessary, like calling external APIs, querying or updating a database, etc. It builds a response and sends a webhook response back to Dialogflow API. <br>
+- Webhoo request:
+- Webhook response:
+
+A webhook can be created in any server side programming language like Python, PHP or Node.js. 
+ 
+
+
 
 ## <a name="Testing"></a>Testing the completed agent
 
