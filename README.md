@@ -1,4 +1,4 @@
-# Dialogflow-CX-Start-Tutorial (In progress)
+# Dialogflow-CX-Start-Tutorial
 
 ### Content
 - ##### [Introduction](#intro)
@@ -170,7 +170,7 @@ def post_webhook_dialogflow():
     msg = invoke_api(fulfillment, slots)
     return answer_webhook(msg, session_id)
 ```
-- invoke_api(fulfillment, slots_values_list): defines actions that should be executed for a given fulfillment. To keep it simple, we have one action that makes call to the [Open wetather API](https://openweathermap.org/api) to get current weather condition for a givin city.
+- invoke_api (fulfillment, slots_values_list): defines actions that should be executed for a given fulfillment. To keep it simple, we have one action that makes call to the [Open wetather API](https://openweathermap.org/api) to get current weather condition for a givin city.
 ```
 def invoke_api(fulfillment, slots_values_list):
     print("\n\n\n\n\n=========> CALL API ",fulfillment)
