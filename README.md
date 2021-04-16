@@ -125,6 +125,9 @@ To avoid such an issue, the agent needs to exploit the context well, i.e.,  any 
 4. Follow the similar steps and add (Parameter: city; Value: "$session.params.location") in “Search restaurant” page.
 5. Test again the agent, what do you notice? 
 ## <a name="webhook "></a>Building a webhook
+At this point, the created agent can answer users only with static response messages. But in real cases, we need to generate dynamic responses, validate collected data, or trigger actions on the backend.  Webhooks are introduced to handle all of this. 
+
+![tt](images/webhook.png)
 
 ## <a name="Testing"></a>Testing the completed agent
 
