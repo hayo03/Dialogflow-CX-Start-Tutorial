@@ -264,5 +264,4 @@ We need to first create a webhook and add it to the fulfillment in "Get Weather"
 3. To test the webhook, click the Test Agent and enter "What does the weather forecast look like?". If everything is well settled, the agent should provide you the weather forecast in the given city.
 
 ## <a name="conclu"></a>Conclusion
-
-
+There are other interesting agent settings that we haven't covered, including integrations and event handlers. Overall, this tutorial covers most of the Dialogflow CX basics that every bot developer should be well-versed in toward building conversational agents doted with advanced capabilities.
