@@ -138,10 +138,56 @@ A webhook can be created in any server side programming language like Python, PH
 ## Install Python 3 
 Download and install Python from [Here](https://www.python.org/downloads/)
 ## Editor: 
-Uou can use gedit or [Visual studio code](https://code.visualstudio.com/download)
+You can use gedit or [Visual studio code](https://code.visualstudio.com/download)
 ## Creating a webhook service using Python
-Create a folder and name it (e.g. webhook_service). Under this folder, we are going to create the following three files: main.py, API_manager.py, API_crendentials.json. 
-- main.py:
+Create a folder and name it (e.g. webhook_service). Under this folder, we are going to create the following three files: webhook.py, API_manager.py, API_crendentials.json. 
+- webhook.py: it is the webhook service that will handele the requests sent from the agent and provide back a response. We are going to use Flask (a light-weight python web framework ) for creating a webhook.
+
+```
+import json
+from flask import request, jsonify, make_response
+from flask import Flask
+from flask_cors import CORS
+from flask import Response
+
+app = Flask(__name__)
+CORS(app)
+
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=8081, debug=True)
+
+'''
+To handle the requests from the agent, we have to add a route in the router and define the function that will be executed when the endpoint is hit:
+
+'''
+@app.route('/my_webhook', methods=['POST'])
+def post_webhook_dialogflow():
+    body = request.get_json(silent=True)
+    session_id = body['detectIntentResponseId']
+    #The tag used to identify which fulfillment is being called.
+    fulfillment = body['fulfillmentInfo']['tag']
+    slots = []
+    for key, value in body['sessionInfo']['parameters'].items():
+        slots.append({'name':key,'value':value})
+
+    # msg = 'hi'
+    msg = invoke_api(fulfillment, slots)
+    return answer_webhook(msg, session_id)
+
+def answer_webhook(msg, session_id):
+    message= {"fulfillment_response": {
+      
+        "messages": [
+        {
+          "text": {
+            "text": [msg]
+          }
+        }
+      ]
+    }
+    }
+    return Response(json.dumps(message), 200, mimetype='application/json')
+'''
 - API_manager.py:
 - API_crendentials.json:
 
