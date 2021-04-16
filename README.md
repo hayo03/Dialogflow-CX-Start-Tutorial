@@ -216,6 +216,44 @@ Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/we
          "appid":"put here your openweathermap API key"
         },
 ```
+## run the webhook service
+Once you get the required credentials and complete API_credentials.json file, open terminal, create a virtual environment and install required packages
+| Operating system        | macOS/OS X, Linux |  Windows |
+|:-------------:|:-----:|:-----:|
+|  ```
+cd webhook_service
+virtualenv -p python3 venv
+source venv\Scripts\activate
+pip install -r requirements.txt
+python webhook_service.py
+``` 
+| ``` cd webhook_service
+virtualenv -p python3 venv
+venv\Scripts\activate.bat
+pip install -r requirements.txt
+python webhook_service.py``` 
+ |
+
+
+
+Operating system: macOS/OS X, Linux; 
+```
+cd webhook_service
+virtualenv -p python3 venv
+source venv\Scripts\activate
+pip install -r requirements.txt
+python webhook_service.py
+```
+
+Operating system: Windows; 
+```
+cd webhook_service
+virtualenv -p python3 venv
+venv\Scripts\activate.bat
+pip install -r requirements.txt
+python webhook_service.py
+
+
 
 ## Deploy a webhook service using Ngrok
 ## Setup webhook in Dialogflow and test it
