@@ -7,7 +7,6 @@
 - ##### [Managing Flows & Pages](#FlowsandPages)
 - ##### [Reusing information between flows](#reuseinformation)
 - ##### [Building a webhook](#webhook)
-- ##### [Testing the completed agent](#Testing)
 - ##### [Conclusion](#conclu)
 
 
@@ -124,7 +123,7 @@ To avoid such an issue, the agent needs to exploit the context well, i.e.,  any 
    - Value: "$session.params.city" 
 4. Follow the similar steps and add (Parameter: city; Value: "$session.params.location") in “Search restaurant” page.
 5. Test again the agent, what do you notice? 
-## <a name="webhook "></a>Building a webhook
+## <a name="webhook"></a>Building a webhook
 At this point, the created agent  can answer users only with static response messages. But in real cases, we need to generate dynamic responses, validate collected data, or trigger actions on the backend.  Webhooks are introduced to handle all of this.  They are simply the backend parts of the agent. The agent is the frontend part.
 
 ![tt](images/webhook.png)
@@ -134,12 +133,23 @@ The webhook service receives the webhook request and takes any actions necessary
 - Webhoo request:
 - Webhook response:
 
-A webhook can be created in any server side programming language like Python, PHP or Node.js. 
- 
+A webhook can be created in any server side programming language like Python, PHP or Node.js. We are going to use Python to create a webhook and Ngrok to deploy it using Ngrok. Let’s start building our own webhook for handling weather forecast requests. 
+
+## Install Python 3 
+Download and install Python from [Here](https://www.python.org/downloads/)
+## Editor: 
+Uou can use gedit or [Visual studio code](https://code.visualstudio.com/download)
+## Creating a webhook service using Python
+Create a folder and name it (e.g. webhook_service). Under this folder, we are going to create the following three files: main.py, API_manager.py, API_crendentials.json. 
+- main.py:
+- API_manager.py:
+- API_crendentials.json:
 
 
+## Deploy a webhook service using Ngrok
+## Setup webhook in Dialogflow and test it
 
-## <a name="Testing"></a>Testing the completed agent
+
 
 ## <a name="conclu"></a>Conclusion
 
