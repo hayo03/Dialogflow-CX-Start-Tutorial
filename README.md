@@ -225,7 +225,7 @@ cd webhook_service
 virtualenv -p python3 myenv
 source myenv/bin/activate
 pip install -r requirements.txt
-python webhook_service.py
+python webhook.py
 ```
 
 - Operating system: Windows:
@@ -235,7 +235,7 @@ cd webhook_service
 python3 -m venv myenv
 myenv\Scripts\activate.bat
 pip install -r requirements.txt
-python webhook_service.py
+python webhook
 
 ```
 
