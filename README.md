@@ -21,32 +21,31 @@ This guide shows how to use the Dialogflow CX Console to build and test a simple
    - You can choose any name.<br>
    - Select your preferred location. <br>
    - Select your preferred time zone.<br>
-   - Select the default language for your agent.<br>
+   - Select "English" as default language for your agent.<br>
 4. Click Save.<br> 
 
 ## <a name="welcomemessage "></a>Exploring the created agent 
-The created agent has a default Start Flow with a start page that comes with default welcome intent. Withing this default setting, the agent can handle a basic conversation with only a welcome message. 
+The created agent has a default Start Flow with a start page that comes with default welcome intent. Within this default setting, the agent can handle a basic conversation with only a welcome message.
 
 ![tt](images/agent_default.png)
 
-To test your new agent:
+<b><i>To test your new agent</i></b>:
 1. Click the Test Agent button to open the simulator.
-2. Enter hello in the text entry and press enter.
-3. The agent responds with a default welcome response.
-4. Close the simulator 
+2. Enter hello in the text entry and press enter. The agent responds with a default welcome response.
+3. Close the simulator 
 
-To edit the welcome response message:
+<b><i>To edit the welcome response message</i></b>:
 1. Click the Build tab.
 2. Select the Default Start Flow in the Flows section.
 3. Click the Start node in the graph. This is the start page for the Default Start Flow.
-4. Find the intent route with the Default Welcome Intent as an intent requirement and click it. This opens a panel to edit the intent route information.
-5. Find the fulfillment section and delete all response messages, then add "Hello, this is a demo virtual agent. How can I help you? as the only response".
+4. Find the intent route with the Default Welcome Intent and click it. This opens a panel to edit the intent route information.
+5. Find the fulfillment section and delete all response messages, then add "Hello, this is a demo virtual agent. How can I help you?" as the only response.
 6. Click Save and Close the intent route editing panel.
-7. Test the updated welcome response message
+7. Test the updated welcome response message.
 
 ## <a name="FlowsandPages"></a>Managing Flows & Pages
 So far, the agent has one flow with the start page. In this section, we will add two flows that handle requests about the weather forecast and restaurant reservations. The design of these flows is like the following:
-![tt](images/flows.svg)
+![tt](images/flows.png)
 
 <b> Weather forecast flow: </b> allows users to ask about weather forecast information in a given city. Before building it, we need to create the intent that once matched, the flow will be called to handle the user request. <br>
 <b>Create intent: </b>
