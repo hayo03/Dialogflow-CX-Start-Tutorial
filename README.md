@@ -47,38 +47,32 @@ The created agent has a default Start Flow with a start page that comes with def
 So far, the agent has one flow with the start page. In this section, we will add two flows that handle requests about the weather forecast and restaurant reservations. The design of these flows is like the following:
 ![tt](images/flows.png)
 
-<b> Weather forecast flow: </b> allows users to ask about weather forecast information in a given city. Before building it, we need to create the intent that once matched, the flow will be called to handle the user request. <br>
+<b> Weather forecast flow: </b> allows users to ask about weather forecast in a given city. Before building it, we need to create the intent that once matched, the flow will be called to handle the user request. <br>
 <b>Create intent: </b>
 1. Select the Manage tab.
 2. Click Intents, click Create, enter weather.current as an intent name and enter the training phrases in [utterances.text](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/intents/GetWeather.txt).
-3. Click Save 
-
-<b>Create entity types and parameters:</b> <br>
-As you notice the city parameter is not detected automatically so we have to create it, but we need to first create its entity type "geo-city". <br>
-  - <b> Parameter:</b> city<br>
-  - <b> Entity type:</b> geo-city<br>
-1. Select the Manage tab and Click on Entity Types, click +Create, set the name to size geo-city, add some entity entries for the city (Paris, Lyon, Evry, ) and click Save. <br>
-2. Back to the Intents tab and select "weather.current" intent. For each phrase that contains a city, annotate the city with a city parameter and the @geo-city custom entity type and  Click Save.
+3. For each phrase that contains a city, annotate the city with a parameter named "city" and @sys.geo-city as entity type and Click Save.
 
 <b>Create Flow : </b> 
 1. Select the Build tab.
-2. Click Flows, click Create, enter Weather forecast as an flow name. 
+2. Click Flows.
+3. Click Create and enter Weather forecast as a flow name. 
 
 <b>Create Page : </b> <br>
-Bu defaut, the Weather forecast flow has a special page named Start. When a flow initially becomes active, this page becomes the current, active page. A start page does not have parameters or responses messages like normal pages. So we need to create page that will collect city information from user and handle its request (i.e., provide answer to the user). <br>
+By default, the Weather forecast flow has a special page named Start. When a flow initially becomes active, this page becomes the current active page. A start page does not have parameters or response messages like normal pages. So we need to create pages that will collect city information from user and handle his/her request (i.e., provide answers to the user). <br>
  1. Click on "Start" page in Weather forecast flow 
- 2. Click the add add button in the Pages section.
- 3. Enter "Get current Weather" as a display name for the page.
+ 2. Click the add + button in the Pages section.
+ 3. Enter "Get current weather" as a display name for the page.
  4. Click the settings more_vert button next to the page display name and select Edit.
  5. Create a new parameter:<br>
    - Parameter name: city<br>
-   - Entity type: @geo-city<br>
+   - Entity type: @sys.geo-city<br>
    - Check "Required"<br>
-   - Fulfillement (Agent says): What is your city name?<br>
+   - Fulfillement (Agent says): What is the city?<br>
 
 <b> Create Routes: </b> <br> 
-As you notice there is no link between different flows (i.e., Default Start Flow and Weather forecast Flow)  and the newly created page (get current weather). Without those links, the conversation between bot and user can not be handled. Therefore, Routes are introduced to define such links. We need to define three routes as follows: 
-1. Create a Route that transitions from the default start flow to  Weather forecast flow. This route should be called when the end-user asks for weather forecast information. To create this route:  <br>
+As you notice there is no link between different flows (i.e., Default Start Flow and Weather forecast Flow) and the newly created page (get current weather). Without those links, the conversation between bot and user can not be handled. Therefore, Routes are introduced to define such links. We need to define three routes as follows: 
+1. Create a Route that transitions from the default start flow to  Weather forecast flow. This route should be called when the end-user asks for weather forecast. To create this route:  <br>
   - Select the Default Start Flow in the Flows section.
   - Click the Start node in the graph. 
   - Add the following intent route:
@@ -86,7 +80,7 @@ As you notice there is no link between different flows (i.e., Default Start Flow
       - Transition: choose Flow  and select “Weather forecast” flow
   - Click Save
 
-2. Create a Route that transitions from the start page of the Weather forecast flow to get current weather page.  This route should be called when the intent “weather.current” is matched”. To create this route: <br> 
+2. Create a Route that transitions from the start page of the Weather forecast flow to "Get current weather" page. This route should be called when the intent “weather.current” is matched”. To create this route: <br> 
    - Select the Weather forecast” Flow in the Flows section.
    - Click the Start node in the graph. 
    - Add the following intent route:
@@ -94,30 +88,30 @@ As you notice there is no link between different flows (i.e., Default Start Flow
        - Transition: choose Page  and select “Get current weather” page
     - Click Save
 
-3. Create a route that transitions from “get current weather page” to End Flow page: this route should be called when all parameters are fulfilled. To create this route: <br> 
-   - Select the Weather forecast” Flow in the Flows section.
+3. Create a route that transitions from “Get current weather" page to End Flow page: this route should be called when all parameters are fulfilled. To create this route: <br> 
+   - Select the "Weather forecast” Flow in the Flows section.
    - Click the Start node in the graph. 
    - Add the following intent route:
        - condition: $page.params.status="FINAL"
-       - Fulfillement (What the Agent will aswer to the user):  There is clear sky in $session.params.city
+       - Fulfillement (What the Agent will answer to the user):  There is clear sky in $session.params.city
        - Transition: choose Page  and select “End Flow” page
    - Click Save
 
-Congratulations! Now you can test your agent to test whether your flow is correctly defined:
+Congratulations! Now you can test your agent to test if your flow is correctly created:
 
-<b> Test the Weather forecast: </b><br>
+<b> Test the Weather forecast flow: </b><br>
 1. Click the Test Agent button to open the simulator.<br>
 2. Enter "What does the weather forecast look like?" and press enter.<br>
-3. The agent will provides you the weather forecast information.<br>
+3. The agent will request you to provide the city and then provides you the weather forecast.<br>
 
 ## Exercice
 Create and test the Restaurant reservation flow. [Here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/tree/main/Exercice) we provide some guidance steps.
 ## <a name="reuseinformation"></a>Reusing information between flows
-After completing both flows, the agent will be able to handle the user requests about both weather forecast information and restaurant reservation. However, when you interact with the agent, you will notice that it may ask for information already provided by a user. As shown below, the agent asks the user "where are you" despite the fact that he already provided his city in one of the previous turns. <br> 
+After completing both flows, the agent will be able to handle user requests about both weather forecast and restaurant reservation. However, when you interact with the agent, you will notice that it may ask you for information that you already provided. As shown below, the agent asks the user "what is your location" despite the fact that he already provided his/her city in one of the previous turns. <br> 
 
-To avoid such an issue, the agent needs to exploit the context well, i.e.,  any information that can be leveraged from the previous conversation turns or any other sources (e.g., user profile). In this tutorial, we are interested in exploiting the previous conversation turns as the main source for the context. Indeed, in Dialogflow CX,  there is an interesting feature called Parameter preset (in the fulfillment section) that allows to set or override parameter values. So we will exploit this feature in order to reuse information from sessions parameters that represents parameters fulfilled in the previous turns. To do so : <br>
-1. Select “current weather” page in Weather forecast flow and edit the already defined route
-2. Find Parameter preset feature within the  fulfillment section and 
+To avoid such an issue, the agent needs to exploit the context well, i.e.,  any information that can be leveraged from the previous conversation turns or any other sources (e.g., user profile). In this tutorial, we are interested in exploiting the previous conversation turns as the main source for the context. Indeed, in Dialogflow CX,  there is an interesting feature called Parameter preset (in the fulfillment section) that allows to set or override the parameter values. So we will exploit this feature in order to reuse information from session parameters that represents the parameters fulfilled in the previous turns. To do so : <br>
+1. Select “Get current weather” page in Weather forecast flow and edit the already defined route.
+2. Find Parameter preset feature within the fulfillment section.
 3. Click on Add Parameter and add the following:
    - Parameter: location; 
    - Value: "$session.params.city" 
