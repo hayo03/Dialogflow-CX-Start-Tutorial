@@ -245,7 +245,7 @@ Ngrok is a web tunneling tool that provides a way to test webhooks from local se
 
 ```
 cd Ptah_To_Ngrok
-ngrok http 8081 (or ./ngrok http 8081 if the first one does not work)
+./ngrok http 8081 (or ngrok http 8081 if the first one does not work)
 
 ```
 
