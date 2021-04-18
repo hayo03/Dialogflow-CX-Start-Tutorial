@@ -12,6 +12,7 @@
 
 ## <a name="intro"></a>Introduction
 This guide shows how to use the Dialogflow CX Console to build and test a simple demo agent. When interacting with this agent, you can ask for getting the weather forecast information, search for a restaurant and make a table reservation. Your completed agent for this guide will be graphed by the console like the following:
+![tt](images/demo_flows.png)
 
 ## <a name="Setup"></a>Dialogflow CX Setup 
 1. To use services provided by Google Cloud, you need to create a project using [Google Cloud Console](https://console.cloud.google.com/) and enable the Dialogflow API.
