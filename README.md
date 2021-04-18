@@ -275,7 +275,7 @@ We need to first create a webhook and add it to the fulfillment in "Get current 
 
 ## <a name="conclu"></a>Conclusion
 There are other interesting agent settings that we haven't covered, including integrations and event handlers. Overall, this tutorial covers most of the Dialogflow CX basics that every bot developer should be well-versed in toward building conversational agents doted with advanced capabilities.
-<b> <i> Please send your feedback to brabra.hayeet@gmail.com.</i></b>
+<b> <i> Please send your feedback to hayet.brabra@liris.cnrs.fr.</i></b>
 
 
 
