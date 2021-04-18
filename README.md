@@ -136,14 +136,14 @@ At this point, the created agent  can answer users only with static response mes
 </p>
 
 As the diagram above shows, when a fulfillment  that has a webhook is called, the Dialogflow API sends a webhook request to the webhook service.
-The webhook service receives the webhook request and takes any actions necessary, like calling external APIs, querying or updating a database, etc. It builds a response and sends a webhook response back to Dialogflow API. A webhook can be created in any server side programming language like Python, PHP or Node.js. We are going to use Python to create a webhook and Ngrok to deploy it using Ngrok. Let’s start building our own webhook for handling weather forecast requests. 
+The webhook service receives the webhook request and takes any actions necessary, like calling external APIs, querying or updating a database, etc. It builds a response and sends a webhook response back to Dialogflow API. A webhook can be created in any server side programming language like Python, PHP or Node.js. We are going to use Python to create a webhook and Ngrok to deploy it. Let’s start building our own webhook for handling weather forecast requests. 
 
 ## Install Python 3 
 Download and install Python from [Here](https://www.python.org/downloads/)
 ## Editor: 
 You can use gedit or [Visual studio code](https://code.visualstudio.com/download)
 ## Creating a webhook service using Python
-Create a folder and name it (e.g. webhook_service). Under this folder, we are going to create the following two files: webhook.py, API_crendentials.json. 
+Create a folder and name it (e.g. webhook_service). Under this folder, we are going to create the following three files: webhook.py, API_crendentials.json, requirements.txt. 
 - webhook.py: it is the webhook service that will handele the requests sent from the agent and provide back a response. We are going to use Flask (a light-weight python web framework ) for creating a webhook.
 
 ```
@@ -178,7 +178,7 @@ def post_webhook_dialogflow():
     msg = invoke_api(fulfillment, slots)
     return answer_webhook(msg)
 ```
-- invoke_api (fulfillment, slots_values_list): defines actions that should be executed for a given fulfillment. To keep it simple, we have one action that makes call to the [Open wetather API](https://openweathermap.org/api) to get current weather condition for a givin city.
+- invoke_api (fulfillment, slots): defines actions that should be executed for a given fulfillment. To keep it simple, we have one action that makes call to the [Open wetather API](https://openweathermap.org/api) to get current weather forecast for a givin city.
 ```
 def invoke_api(fulfillment, slots):
     print("\n\n\n\n\n=========> CALL API ",fulfillment)
@@ -198,7 +198,7 @@ def invoke_api(fulfillment, slots):
         else:
             return "Something wrong with the API."
 ```
-- answer_webhook(msg, session_id):  return the answer to the agent in json format.
+- answer_webhook(msg, session_id): return the answer to the agent in json format.
 ```
 def answer_webhook(msg):
     message= {"fulfillment_response": {
@@ -222,6 +222,11 @@ Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/we
          {
          "appid":"put here your openweathermap API key"
         },
+```
+- requirements.txt: contain the libraries required to create the webhook service, namelly requests flask and requests.
+```
+flask
+requests
 ```
 ## Run the webhook service
 Once you get the required credentials and complete API_credentials.json file, open terminal, create a virtual environment and install required packages.
