@@ -254,7 +254,7 @@ python webhook
 Ngrok is a web tunneling tool that provides a way to test webhooks from local server. Download it from [here](https://ngrok.com/download), unzip it, and in the terminal just run the following commends:
 
 ```
-cd Ptah_To_Ngrok
+cd Path_To_Ngrok
 ./ngrok http 8081 (or ngrok http 8081 if the first one does not work)
 
 ```
