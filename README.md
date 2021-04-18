@@ -143,11 +143,12 @@ Create a folder and name it (e.g. webhook_service). Under this folder, we are go
 import json
 from flask import request, jsonify, make_response
 from flask import Flask
-from flask_cors import CORS
 from flask import Response
+import requests
 
 app = Flask(__name__)
-CORS(app)
+
+#definition of functions 
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8081, debug=True)
@@ -159,27 +160,27 @@ To handle the requests from the agent, we have to add a route in the router and 
 @app.route('/my_webhook', methods=['POST'])
 def post_webhook_dialogflow():
     body = request.get_json(silent=True)
-    session_id = body['detectIntentResponseId']
     #The tag used to identify which fulfillment is being called.
     fulfillment = body['fulfillmentInfo']['tag']
     slots = []
     for key, value in body['sessionInfo']['parameters'].items():
         slots.append({'name':key,'value':value})
-
+       
+    print (slots)
     # msg = 'hi'
     msg = invoke_api(fulfillment, slots)
-    return answer_webhook(msg, session_id)
+    return answer_webhook(msg)
 ```
 - invoke_api (fulfillment, slots_values_list): defines actions that should be executed for a given fulfillment. To keep it simple, we have one action that makes call to the [Open wetather API](https://openweathermap.org/api) to get current weather condition for a givin city.
 ```
-def invoke_api(fulfillment, slots_values_list):
+def invoke_api(fulfillment, slots):
     print("\n\n\n\n\n=========> CALL API ",fulfillment)
-        if fulfillment == "GetWeather_fulfillment":
+    if fulfillment == "GetWeather_fulfillment":
+        for slot in slots:
+             if slot['name']=="city":
+                 q=str(slot['value'])
         appid=getAPI_credential('api.openweathermap','appid')
-        url = 'http://api.openweathermap.org/data/2.5/weather?q=[%q%]&appid='+appid
-        for slot in slots_values_list:
-            url = url.replace('[%{}%]'.format(slot['name']),
-                              ' '.join(slot['value']) if isinstance(slot['value'], list) else slot['value'])
+        url = 'http://api.openweathermap.org/data/2.5/weather?q='+q+'&appid='+appid
         result = requests.get(url)
         jsonResult = result.json()
         if result.status_code == 200:
@@ -188,12 +189,11 @@ def invoke_api(fulfillment, slots_values_list):
             print(reply)
             return reply
         else:
-            #print(jsonResult['message'])
             return "Something wrong with the API."
 ```
 - answer_webhook(msg, session_id):  return the answer to the agent in json format.
 ```
-def answer_webhook(msg, session_id):
+def answer_webhook(msg):
     message= {"fulfillment_response": {
       
         "messages": [
@@ -209,7 +209,7 @@ def answer_webhook(msg, session_id):
 ```
 Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/webhook%20service/webhook.py) for the full webhook script that we've built.
 
-- API_crendentials.json: contain credential information needed to make calls to the [Open wetather API](https://openweathermap.org/api). Getting credential information requires creating an account in this API.
+- API_crendentials.json: contain credential information needed to make calls to the [Open wetather API](https://openweathermap.org/api). We put our own credential information but you can get your own credential information and put them in this file. Getting credential information requires creating an account in this API.
 ```
  "api.openweathermap":
          {
