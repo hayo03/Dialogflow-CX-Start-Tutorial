@@ -109,7 +109,9 @@ Create and test the Restaurant reservation flow. [Here](https://github.com/hayo0
 ## <a name="reuseinformation"></a>Reusing information between flows
 After completing both flows, the agent will be able to handle user requests about both weather forecast and restaurant reservation. However, when you interact with the agent, you will notice that it may ask you for information that you already provided. As shown below, the agent asks the user "what is your location" despite the fact that he already provided his/her city in one of the previous turns. <br> 
 
-![tt](images/reuse_info.png)
+<p align="center">
+  <img width="460" height="300" src="images/reuse_info.png">
+</p>
 
 To avoid such an issue, the agent needs to exploit the context well, i.e.,  any information that can be leveraged from the previous conversation turns or any other sources (e.g., user profile). In this tutorial, we are interested in exploiting the previous conversation turns as the main source for the context. Indeed, in Dialogflow CX,  there is an interesting feature called Parameter preset (in the fulfillment section) that allows to set or override the parameter values. So we will exploit this feature in order to reuse information from session parameters that represents the parameters fulfilled in the previous turns. To do so : <br>
 1. Select “Get current weather” page in Weather forecast flow and edit the already defined route.
