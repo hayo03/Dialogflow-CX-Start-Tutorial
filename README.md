@@ -214,7 +214,7 @@ def answer_webhook(msg):
     }
     return Response(json.dumps(message), 200, mimetype='application/json')
 ```
-Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/webhook%20service/webhook.py) for the full webhook script that we've built.
+Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/webhook_service/webhook.py) for the full webhook script that we've built.
 
 - API_crendentials.json: contain credential information needed to make calls to the [Open wetather API](https://openweathermap.org/api). We put our own credential information but you can get your own credential information and put them in this file. Getting credential information requires creating an account in this API.
 ```
