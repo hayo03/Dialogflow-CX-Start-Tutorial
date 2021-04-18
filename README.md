@@ -12,7 +12,11 @@
 
 ## <a name="intro"></a>Introduction
 This guide shows how to use the Dialogflow CX Console to build and test a simple demo agent. When interacting with this agent, you can ask for getting the weather forecast information, search for a restaurant and make a table reservation. Your completed agent for this guide will be graphed by the console like the following:
-![tt](images/demo_flows.png)
+
+<p align="center">
+  <img src="images/demo_flows.png">
+</p>
+
 
 ## <a name="Setup"></a>Dialogflow CX Setup 
 1. To use services provided by Google Cloud, you need to create a project using [Google Cloud Console](https://console.cloud.google.com/) and enable the Dialogflow API.
@@ -124,7 +128,9 @@ To avoid such an issue, the agent needs to exploit the context well, i.e.,  any 
 ## <a name="webhook"></a>Building a webhook
 At this point, the created agent  can answer users only with static response messages. But in real cases, we need to generate dynamic responses, validate collected data, or trigger actions on the backend.  Webhooks are introduced to handle all of this.  They are simply the backend parts of the agent. The agent is the frontend part.
 
-![tt](images/webhook.png)
+<p align="center">
+  <img src="images/webhook.png">
+</p>
 
 As the diagram above shows, when a fulfillment  that has a webhook is called, the Dialogflow API sends a webhook request to the webhook service.
 The webhook service receives the webhook request and takes any actions necessary, like calling external APIs, querying or updating a database, etc. It builds a response and sends a webhook response back to Dialogflow API. A webhook can be created in any server side programming language like Python, PHP or Node.js. We are going to use Python to create a webhook and Ngrok to deploy it using Ngrok. Let’s start building our own webhook for handling weather forecast requests. 
