@@ -7,7 +7,7 @@ After adding the design of the restaurant reservation flow, the whole agent desi
 
 ## Creating Restaurant reservation flow 
 To create this flow, you will almost follow the steps taken for Weather forecast Flow. 
-1. Create intents 
+1. Create intent
    - Intent: restaurant.search
      - Utterances: [SearchRestaurant.txt](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/intents/SearchRestaurant.txt).
      - Parameters: 
@@ -19,12 +19,12 @@ To create this flow, you will almost follow the steps taken for Weather forecast
       - Transition to the Flow: Restaurant reservation flow
 4. Create Page named "Search restaurant" that will collect the location information where users search in and kind of food they prefer. 
     - Parameters: 
-        - name: Location; Entity type: @geo_city
+        - name: Location; Entity type: @sys.geo_city
         - name: food; Entity type: @food; 
 5. Create a Route that transitions from the Restaurant reservation flow to Search restaurant page. 
       - Intent: restaurant.search
       - Transition to the Page: Search restaurant
-6. Create a Route that transitions from the search restaurant page to Reservation page. 
+6. Create a Route that transitions from the search restaurant page to EndFlow page. 
       - Condition: $page.params.status="FINAL"
       - Fulfillement:  This one serves $session.params.food food: Helow world Restaurant, Phone: +0000000, address : Helow world street, $session.params.location
       - Transition to the Page: Reservation
