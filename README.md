@@ -123,9 +123,10 @@ Considering the following conversation example:
     - Do I need to add a new intent? new parameters? new entity types? 
     - Do I need to create a page?
     - What are the required routes to support this case? 
-2. Once you identify the required design, add it to the Demo agent. 
+2. Once you identified the required design, add it to the Demo agent. 
 3. Test your Demo agent to check whether what you created will lead to the given conversation example.
-4. (Home exercise) Complete the whole flow that should lead to a conversation like the following conversation example.
+4. <b> (Home exercise) Complete the whole flow that should lead to a conversation like the following conversation example.</b>
+
   ![tt](images/reservation_example.png)
 </br>
 ## <a name="reuseinformation"></a>Reusing information between flows
