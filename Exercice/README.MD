@@ -1,5 +1,11 @@
-## Create Restaurant reservation flow 
-Restaurant reservation flow  allows users to search for restaurants and make reservations in a restaurant of their choice. To create this flow, you will almost follow the steps taken for Weather forecast Flow. 
+## Designing the Restaurant reservation flow 
+Restaurant reservation flow  allows users to search for restaurants and make reservations in a restaurant of their choice. 
+
+<p align="center">
+  <img src="images/Restaurant-search-flow.png">
+</p>
+## Creating Restaurant reservation flow 
+To create this flow, you will almost follow the steps taken for Weather forecast Flow. 
 1. Create intents 
    - Intent: restaurant.search
      - Utterances: [SearchRestaurant.txt](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/intents/SearchRestaurant.txt).
@@ -27,6 +33,4 @@ Restaurant reservation flow  allows users to search for restaurants and make res
       - Condition: $page.params.status="FINAL"
       - Fulfillement:  This one serves $session.params.food food: Helow world Restaurant, Phone: +0000000, address : Helow world street, $session.params.location
       - Transition to the Page: Reservation
-  5. Find by yourself the next steps toward complete the whole flow that should lead to a conversation like the following conversation example:
-  
-  ![tt](images/reservation_example.png)
+
