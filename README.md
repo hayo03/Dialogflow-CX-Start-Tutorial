@@ -114,7 +114,15 @@ Congratulations! Now you can test your agent to test if your flow is correctly c
 3. The agent will request you to provide the city and then provides you the weather forecast.<br>
 
 ## Exercice
-Create and test the Restaurant reservation flow. [Here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/tree/main/Exercice) we provide some guidance steps.
+Considering the following conversation example:
+<img src=”images/Restaurant_search_conversation_example.png” ALIGN=”top” />
+1. Identify the flow design you think is required to support the given conversation example. Toward a solution, you may need to ask yourself the following questions:
+    - Do I need to add a new flow?
+    - Do I need to add a new intent? new parameters? new entity types? 
+    - Do I need to create a page?
+    - What are the required routes to support this case? 
+2. Once you identify the required design, add it to the Demo agent. 
+3. Test your Demo agent to check whether what you created will lead to the given conversation example.
 ## <a name="reuseinformation"></a>Reusing information between flows
 After completing both flows, the agent will be able to handle user requests about both weather forecast and restaurant reservation. However, when you interact with the agent, you will notice that it may ask you for information that you already provided. As shown below, the agent asks the user "what is your location" despite the fact that he already provided his/her city in one of the previous turns. <br> 
 
