@@ -125,6 +125,8 @@ Considering the following conversation example:
     - What are the required routes to support this case? 
 2. Once you identify the required design, add it to the Demo agent. 
 3. Test your Demo agent to check whether what you created will lead to the given conversation example.
+4. (Home exercise) Complete the whole flow that should lead to a conversation like the following conversation example.
+  ![tt](images/reservation_example.png)
 </br>
 ## <a name="reuseinformation"></a>Reusing information between flows
 After completing both flows, the agent will be able to handle user requests about both weather forecast and restaurant reservation. However, when you interact with the agent, you will notice that it may ask you for information that you already provided. As shown below, the agent asks the user "what is your location" despite the fact that he already provided his/her city in one of the previous turns. <br> 
