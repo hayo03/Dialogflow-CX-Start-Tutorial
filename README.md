@@ -2,6 +2,7 @@
 
 ### Content
 - ##### [Introduction](#intro)
+- ##### [Environnement Installation](#install)
 - ##### [Dialogflow CX Setup ](#Setup)
 - ##### [Creating a simple welcome message](#welcomemessage)
 - ##### [Managing Flows & Pages](#FlowsandPages)
@@ -17,12 +18,13 @@ This guide shows how to use the Dialogflow CX Console to build and test a simple
   <img src="images/demo_flows.png">
 </p>
 
-
+## <a name="install"></a>Environnement Installation 
+During this tutorial, we will need to use Python as a programming language, visual studio code to write code, and Ngrok to deploy webhook services in localhost. [Here](https://github.com/hayo03/Installation) are the steps to install all of these:
 ## <a name="Setup"></a>Dialogflow CX Setup 
 1. To use services provided by Google Cloud, you need to create a project using [Google Cloud Console](https://console.cloud.google.com/) and enable the Dialogflow API.
 2. Using [DF-CX console](https://dialogflow.cloud.google.com/cx/projects), choose the project you just created and click Create agent.<br>
 3. Complete the form for basic agent settings:<br>
-   - You can choose any name.<br>
+   - Name it "Demo-agent" <br>
    - Select your preferred location. <br>
    - Select your preferred time zone.<br>
    - Select "English" as default language for your agent.<br>
@@ -138,10 +140,6 @@ At this point, the created agent  can answer users only with static response mes
 As the diagram above shows, when a fulfillment  that has a webhook is called, the Dialogflow API sends a webhook request to the webhook service.
 The webhook service receives the webhook request and takes any actions necessary, like calling external APIs, querying or updating a database, etc. It builds a response and sends a webhook response back to Dialogflow API. A webhook can be created in any server side programming language like Python, PHP or Node.js. We are going to use Python to create a webhook and Ngrok to deploy it. Let’s start building our own webhook for handling weather forecast requests. 
 
-## Install Python 3 
-Download and install Python from [Here](https://www.python.org/downloads/)
-## Editor: 
-You can use gedit or [Visual studio code](https://code.visualstudio.com/download)
 ## Creating a webhook service using Python
 Create a folder and name it (e.g. webhook_service). Under this folder, we are going to create the following three files: webhook.py, API_crendentials.json, requirements.txt. 
 - webhook.py: it is the webhook service that will handele the requests sent from the agent and provide back a response. We are going to use Flask (a light-weight python web framework ) for creating a webhook.
@@ -251,7 +249,7 @@ python webhook
 
 ```
 ## Deploy a webhook service using Ngrok
-Ngrok is a web tunneling tool that provides a way to test webhooks from local server. Download it from [here](https://ngrok.com/download), unzip it, and in the terminal just run the following commends:
+In the terminal just run the following commends:
 
 ```
 cd Path_To_Ngrok
