@@ -19,7 +19,7 @@ This guide shows how to use the Dialogflow CX Console to build and test a simple
 </p>
 
 ## <a name="install"></a>Environnement Installation 
-During this tutorial, we will need to use Python as a programming language, visual studio code to write code, and Ngrok to deploy webhook services in localhost. [Here](https://github.com/hayo03/Installation) are the steps to install all of these:
+During this tutorial, we will need to use Python as a programming language, visual studio code to write code, and Ngrok to deploy webhook services in localhost. [Here](https://github.com/hayo03/Installation) are the steps to install all of these.
 ## <a name="Setup"></a>Dialogflow CX Setup 
 1. To use services provided by Google Cloud, you need to create a project using [Google Cloud Console](https://console.cloud.google.com/) and enable the Dialogflow API.
 2. Using [DF-CX console](https://dialogflow.cloud.google.com/cx/projects), choose the project you just created and click Create agent.<br>
