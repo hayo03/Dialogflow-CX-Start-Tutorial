@@ -6,7 +6,7 @@
 - ##### [Dialogflow CX Setup ](#Setup)
 - ##### [Creating a simple welcome message](#welcomemessage)
 - ##### [Managing Flows & Pages](#FlowsandPages)
-- ##### [Exercise](#Exercise)
+- ##### [Exercise](#exercise)
 - ##### [Reusing information between flows](#reuseinformation)
 - ##### [Building a webhook](#webhook)
 - ##### [Conclusion](#conclu)
@@ -114,8 +114,9 @@ Congratulations! Now you can test your agent to test if your flow is correctly c
 2. Enter "What does the weather forecast look like?" and press enter.<br>
 3. The agent will request you to provide the city and then provides you the weather forecast.<br>
 
-## <a name="Exercise"></a>Exercise
+## <a name="exercise"></a>Exercise
 Considering the following conversation example:
+<br clear="left">
 <img src="images/Restaurant_search_conversation_example.png" align="top" />
 1. Identify the flow design you think is required to support the given conversation example. Toward a solution, you may need to ask yourself the following questions:
     - Do I need to add a new flow?
@@ -124,6 +125,7 @@ Considering the following conversation example:
     - What are the required routes to support this case? 
 2. Once you identify the required design, add it to the Demo agent. 
 3. Test your Demo agent to check whether what you created will lead to the given conversation example.
+</br>
 ## <a name="reuseinformation"></a>Reusing information between flows
 After completing both flows, the agent will be able to handle user requests about both weather forecast and restaurant reservation. However, when you interact with the agent, you will notice that it may ask you for information that you already provided. As shown below, the agent asks the user "what is your location" despite the fact that he already provided his/her city in one of the previous turns. <br> 
 
