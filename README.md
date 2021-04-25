@@ -6,6 +6,7 @@
 - ##### [Dialogflow CX Setup ](#Setup)
 - ##### [Creating a simple welcome message](#welcomemessage)
 - ##### [Managing Flows & Pages](#FlowsandPages)
+- ##### [Exercise](#Exercise)
 - ##### [Reusing information between flows](#reuseinformation)
 - ##### [Building a webhook](#webhook)
 - ##### [Conclusion](#conclu)
@@ -113,9 +114,9 @@ Congratulations! Now you can test your agent to test if your flow is correctly c
 2. Enter "What does the weather forecast look like?" and press enter.<br>
 3. The agent will request you to provide the city and then provides you the weather forecast.<br>
 
-## Exercice
+## <a name="Exercise"></a>Exercise
 Considering the following conversation example:
-<img src=”images/Restaurant_search_conversation_example.png” ALIGN=”top” />
+<img src="images/Restaurant_search_conversation_example.png" align="top" />
 1. Identify the flow design you think is required to support the given conversation example. Toward a solution, you may need to ask yourself the following questions:
     - Do I need to add a new flow?
     - Do I need to add a new intent? new parameters? new entity types? 
