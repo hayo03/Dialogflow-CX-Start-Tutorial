@@ -4,6 +4,7 @@ Restaurant reservation flow  allows users to search for restaurants and make res
 <p align="center">
   <img src="images/Restaurant-search-flow.png">
 </p>
+
 ## Creating Restaurant reservation flow 
 To create this flow, you will almost follow the steps taken for Weather forecast Flow. 
 1. Create intents 
