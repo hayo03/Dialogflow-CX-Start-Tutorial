@@ -50,7 +50,7 @@ The created agent has a default Start Flow with a start page that comes with def
 7. Test the updated welcome response message.
 
 ## <a name="FlowsandPages"></a>Managing Flows & Pages
-So far, the agent has one flow with the start page. In this section, we will add two flows that handle requests about the weather forecast and restaurant reservations. The design of these flows is like the following:
+So far, the agent has one flow with the start page. In this section, we will add another flow that handle requests about the weather forecast. The design of this flow is like the following:
 
 <p align="center">
   <img src="images/Weather-forecast-flow.png">
