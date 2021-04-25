@@ -2,7 +2,7 @@
 After adding the design of the restaurant reservation flow, the whole agent design should be as follow: 
 
 <p align="center">
-  <img src="images/Restaurant-search-flow.png">
+  <img src="images/Restaurant-search-flow (1).png">
 </p>
 
 ## Creating Restaurant reservation flow 
