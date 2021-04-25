@@ -1,10 +1,11 @@
 ## Designing the Restaurant reservation flow 
-Restaurant reservation flow  allows users to search for restaurants and make reservations in a restaurant of their choice. 
+After adding the design of restaurant reservation flow, the whole agent design should be as follow: 
 
 <p align="center">
   <img src="images/Restaurant-search-flow.png">
 </p>
 
+Restaurant reservation flow  allows users to search for restaurants and make reservations in a restaurant of their choice. 
 ## Creating Restaurant reservation flow 
 To create this flow, you will almost follow the steps taken for Weather forecast Flow. 
 1. Create intents 
