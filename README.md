@@ -53,7 +53,7 @@ The created agent has a default Start Flow with a start page that comes with def
 So far, the agent has one flow with the start page. In this section, we will add two flows that handle requests about the weather forecast and restaurant reservations. The design of these flows is like the following:
 
 <p align="center">
-  <img src="images/flows.png">
+  <img src="images/Weather-forecast-flow.png">
 </p>
 
 <b> Weather forecast flow: </b> allows users to ask about weather forecast in a given city. Before building it, we need to create the intent that once matched, the flow will be called to handle the user request. <br>
