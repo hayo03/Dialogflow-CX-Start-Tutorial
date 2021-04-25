@@ -11,7 +11,7 @@ To create this flow, you will almost follow the steps taken for Weather forecast
    - Intent: restaurant.search
      - Utterances: [SearchRestaurant.txt](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/intents/SearchRestaurant.txt).
      - Parameters: 
-        - name: Location; Entity type: @geo_city
+        - name: Location; Entity type: @sys.geo_city
         - name: food; Entity type: @food; entity entries: Italian, Chinese, Turkish, Indian, Tunisian, etc.
    - Intent: restaurant.reservation.yes
      - Utterances: Yes, Sure, Yeah, 
