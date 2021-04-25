@@ -1,5 +1,5 @@
 ## Designing the Restaurant reservation flow 
-After adding the design of restaurant reservation flow, the whole agent design should be as follow: 
+After adding the design of the restaurant reservation flow, the whole agent design should be as follow: 
 
 <p align="center">
   <img src="images/Restaurant-search-flow.png">
