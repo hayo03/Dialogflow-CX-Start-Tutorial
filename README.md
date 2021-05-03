@@ -155,62 +155,56 @@ As the diagram above shows, when a fulfillment  that has a webhook is called, th
 The webhook service receives the webhook request and takes any actions necessary, like calling external APIs, querying or updating a database, etc. It builds a response and sends a webhook response back to Dialogflow API. A webhook can be created in any server side programming language like Python, PHP or Node.js. We are going to use Python to create a webhook and Ngrok to deploy it. Let’s start building our own webhook for handling weather forecast requests. 
 
 ## Creating a webhook service using Python
-Create a folder and name it (e.g. webhook_service). Under this folder, we are going to create the following three files: webhook.py, API_crendentials.json, requirements.txt. 
-- webhook.py: it is the webhook service that will handele the requests sent from the agent and provide back a response. We are going to use Flask (a light-weight python web framework ) for creating a webhook.
+Create a folder and name it as webhook_service). Under this folder, we are going to create the following two files: webhook.py, requirements.txt. 
+- webhook.py: it is the webhook service that will handele the requests sent from the agent and provide back a response. To keep it simple,  we will create a webhook that gets parameters from the agent request and provides back a static response. 
+(The aim here is just to explore the basic template for any webhook service.) 
 
 ```
+#### minimal set of required modules
 import json
-from flask import request, jsonify, make_response
 from flask import Flask
 from flask import Response
 import requests
 
+
+#####create a web app using Flask 
 app = Flask(__name__)
 
-#definition of functions 
+#### Define a Route
 
+@app.route('/my_webhook', methods=['POST'])
+def post_webhook_dialogflow():
+#### Getting information from dialogflow agent request 
+
+  #Get tag used to identify which fulfillment is being called.
+    fulfillment = body['fulfillmentInfo']['tag']
+  #Get parameters that are required to handle the desired action
+
+    prameters = []
+    for key, value in body['sessionInfo']['parameters'].items():
+         prameters.append({'name':key,'value':value})
+       
+    #Execute action
+    msg = invoke_api(fulfillment,  prameters)
+    ## provide the Webhook Response to the Dialogflow Agent
+    WebhookResponse=answer_webhook(msg)
+    return WebhookResponse
+    
+####### to run the webhook and will be hosted on localhost
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8081, debug=True)
 ```
 
-To handle the requests from the agent, we have to add a route in the router and define the function (s) that will be executed when the endpoint is hit:
+- invoke_action (fulfillment, slots): defines the action that should be executed for a given fulfillment. It exploits parameters and injects them into the response text.
 
 ```
-@app.route('/my_webhook', methods=['POST'])
-def post_webhook_dialogflow():
-    body = request.get_json(silent=True)
-    #The tag used to identify which fulfillment is being called.
-    fulfillment = body['fulfillmentInfo']['tag']
-    slots = []
-    for key, value in body['sessionInfo']['parameters'].items():
-        slots.append({'name':key,'value':value})
-       
-    print (slots)
-    # msg = 'hi'
-    msg = invoke_api(fulfillment, slots)
-    return answer_webhook(msg)
-```
-- invoke_api (fulfillment, slots): defines actions that should be executed for a given fulfillment. To keep it simple, we have one action that makes call to the [Open wetather API](https://openweathermap.org/api) to get current weather forecast for a givin city.
-```
-def invoke_api(fulfillment, slots):
-    print("\n\n\n\n\n=========> CALL API ",fulfillment)
+def invoke_action(fulfillment,  prameters):
     if fulfillment == "GetWeather_fulfillment":
-        for slot in slots:
-             if slot['name']=="city":
-                 q=str(slot['value'])
-        appid=getAPI_credential('api.openweathermap','appid')
-        url = 'http://api.openweathermap.org/data/2.5/weather?q='+q+'&appid='+appid
-        result = requests.get(url)
-        jsonResult = result.json()
-        if result.status_code == 200:
-            weatherCondition = jsonResult['weather'][0]['description']
-            reply = "There is {} in there.".format(weatherCondition)
-            print(reply)
-            return reply
-        else:
-            return "Something wrong with the API."
+        city=str( prameters[0]['value'])
+        msg="There are overcast clouds in "+city
+        return msg
 ```
-- answer_webhook(msg, session_id): return the answer to the agent in json format.
+- answer_webhook(msg): processes the webhook answer which should follow a particular JSON format.
 ```
 def answer_webhook(msg):
     message= {"fulfillment_response": {
@@ -228,20 +222,13 @@ def answer_webhook(msg):
 ```
 Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/webhook_service/webhook.py) for the full webhook script that we've built.
 
-- API_crendentials.json: contain credential information needed to make calls to the [Open wetather API](https://openweathermap.org/api). We put our own credential information but you can get your own credential information and put them in this file. Getting credential information requires creating an account in this API.
-```
- "api.openweathermap":
-         {
-         "appid":"put here your openweathermap API key"
-        },
-```
 - requirements.txt: contain the libraries required to create the webhook service, namelly flask and requests.
 ```
 flask
 requests
 ```
 ## Run the webhook service
-Once you get the required credentials and complete API_credentials.json file, open terminal, create a virtual environment and install required packages.
+Open terminal, create a virtual environment and install required packages.
  - Operating system: macOS/OS X, Linux; 
 ```
 pip install virtualenv
@@ -283,7 +270,32 @@ We need to first create a webhook and add it to the fulfillment in "Get current 
    - Click on the exsiting route 
    - Find the fulfillment section and Check "Use Webhook"
    - Select "my_webhook_service" and enter "GetWeather_fulfillment" in tag field. 
-3. To test the webhook, click the Test Agent and enter "What does the weather forecast look like?". If everything is well settled, the agent should provide you the weather forecast in the given city.
+3. To test the webhook, click the Test Agent and enter "What does the weather forecast look like?". If everything is well settled, the agent should provide you the response text you provided.
+
+#### Update the webhook for invoqing external service
+At this point, our webhook can only get information and invoke a simple action that provides a static response about the weather conditions. But in real cases, we need to invoke one of the external services such as the well-known [Open weather API](https://openweathermap.org/api) to get real-time weather information. To do so we need to update the invoke-action function so as be able to call  Open weather API : 
+
+```
+def invoke_api(fulfillment, slots):
+    print("\n\n\n\n\n=========> CALL API ",fulfillment)
+    if fulfillment == "GetWeather_fulfillment":
+        for slot in slots:
+             if slot['name']=="city":
+                 q=str(slot['value'])
+        appid=getAPI_credential('api.openweathermap','appid')
+        url = 'http://api.openweathermap.org/data/2.5/weather?q='+q+'&appid='+appid
+        result = requests.get(url)
+        jsonResult = result.json()
+        if result.status_code == 200:
+            weatherCondition = jsonResult['weather'][0]['description']
+            reply = "There is {} in there.".format(weatherCondition)
+            print(reply)
+            return reply
+        else:
+            return "Something wrong with the API."
+```
+
+Test the updated webhook to check if it behaves properly.
 
 ## <a name="conclu"></a>Conclusion
 There are other interesting agent settings that we haven't covered, including integrations and event handlers. Overall, this tutorial covers most of the Dialogflow CX basics that every bot developer should be well-versed in toward building conversational agents doted with advanced capabilities.
