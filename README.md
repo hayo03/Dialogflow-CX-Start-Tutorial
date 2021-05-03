@@ -272,7 +272,7 @@ We need to first create a webhook and add it to the fulfillment in "Get current 
    - Select "my_webhook_service" and enter "GetWeather_fulfillment" in tag field. 
 3. To test the webhook, click the Test Agent and enter "What does the weather forecast look like?". If everything is well settled, the agent should provide you the response text you provided.
 
-#### Update the webhook for invoqing external service
+#### Update the webhook for invoking an external service
 At this point, our webhook can only get information and invoke a simple action that provides a static response about the weather conditions. But in real cases, we need to invoke one of the external services such as the well-known [Open weather API](https://openweathermap.org/api) to get real-time weather information. To do so we need to update the invoke-action function so as be able to call  Open weather API : 
 
 ```
