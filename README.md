@@ -212,7 +212,7 @@ if __name__ == '__main__':
 
 ```
 def invoke_action(fulfillment,  prameters):
-
+    print("\n\n\n\n\n=========> CALL ",fulfillment)
     if fulfillment == "GetWeather_fulfillment":
         city=str( prameters[0]['value'])
         msg="There are overcast clouds in "+city
