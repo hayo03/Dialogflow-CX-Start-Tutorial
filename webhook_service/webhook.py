@@ -32,7 +32,7 @@ def post_webhook_dialogflow():
 
 ### Exploit parameters and incorporate them in the text response   
 def invoke_action(fulfillment,  prameters):
-
+    print("\n\n\n\n\n=========> CALL API ",fulfillment)
     if fulfillment == "GetWeather_fulfillment":
         city=str( prameters[0]['value'])
         msg="There are overcast clouds in "+city
