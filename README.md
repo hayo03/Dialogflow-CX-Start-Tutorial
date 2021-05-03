@@ -156,8 +156,7 @@ The webhook service receives the webhook request and takes any actions necessary
 
 ## Creating a webhook service using Python
 Create a folder and name it as webhook_service). Under this folder, we are going to create the following two files: webhook.py, requirements.txt. 
-- webhook.py: it is the webhook service that will handele the requests sent from the agent and provide back a response. To keep it simple,  we will create a webhook that gets parameters from the agent request and provides back a static response. 
-(The aim here is just to explore the basic template for any webhook service.) 
+- webhook.py: it is the webhook service that will handle the requests sent from the Dialogflow agent and provide back a response. To keep it simple, we will create a webhook that gets parameters from an agent request and provides back a static response 
 
 ```
 #### minimal set of required modules
@@ -195,10 +194,10 @@ if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8081, debug=True)
 ```
 
-- invoke_action (fulfillment, slots): defines the action that should be executed for a given fulfillment. It exploits parameters and injects them into the response text.
+- invoke_action (fulfillment, prameters): defines the action that should be executed for a given fulfillment. It exploits parameters and incorporates them into the response text.
 
 ```
-def invoke_action(fulfillment,  prameters):
+def invoke_action(fulfillment, prameters):
     if fulfillment == "GetWeather_fulfillment":
         city=str( prameters[0]['value'])
         msg="There are overcast clouds in "+city
