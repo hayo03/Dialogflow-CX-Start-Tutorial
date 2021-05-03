@@ -162,34 +162,43 @@ Create a folder and name it as webhook_service). Under this folder, we are going
 #### minimal set of required modules
 import json
 from flask import Flask
-from flask import Response
+from flask import Response, request
 import requests
 
 
-#####create a web app using Flask 
+###create a web app using Flask
 app = Flask(__name__)
 
-#### Define a Route
 
+
+### Define a Route 
 @app.route('/my_webhook', methods=['POST'])
+
+### Define the function that will be executed when the associated route is called
 def post_webhook_dialogflow():
-#### Getting information from dialogflow agent request 
-
-  #Get tag used to identify which fulfillment is being called.
+#1) Getting information from dialogflow agent request 
+    body = request.get_json(silent=True)
+#Get tag used to identify which fulfillment is being called.
     fulfillment = body['fulfillmentInfo']['tag']
-  #Get parameters that are required to handle the desired action
-
+#Get parameters that are required to handle the desired action
     prameters = []
     for key, value in body['sessionInfo']['parameters'].items():
          prameters.append({'name':key,'value':value})
-       
-    #Execute action
-    msg = invoke_api(fulfillment,  prameters)
-    ## provide the Webhook Response to the Dialogflow Agent
+
+#2) Execute action
+    msg = invoke_action(fulfillment,  prameters)
+#3) provide a webhook Response to the Dialogflow Agent
     WebhookResponse=answer_webhook(msg)
     return WebhookResponse
-    
-####### to run the webhook and will be hosted on localhost
+
+### Exploit parameters and incorporate them in the text response   
+def invoke_action(fulfillment,  prameters):
+
+
+#### Processes the webhook answer which should follow a particular JSON format
+def answer_webhook(msg):
+ 
+### Run a webhook on localhost
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8081, debug=True)
 ```
@@ -197,7 +206,8 @@ if __name__ == '__main__':
 - invoke_action (fulfillment, prameters): defines the action that should be executed for a given fulfillment. It exploits parameters and incorporates them into the response text.
 
 ```
-def invoke_action(fulfillment, prameters):
+def invoke_action(fulfillment,  prameters):
+
     if fulfillment == "GetWeather_fulfillment":
         city=str( prameters[0]['value'])
         msg="There are overcast clouds in "+city
@@ -275,14 +285,14 @@ We need to first create a webhook and add it to the fulfillment in "Get current 
 At this point, our webhook can only get information and invoke a simple action that provides a static response about the weather conditions. But in real cases, we need to invoke one of the external services such as the well-known [Open weather API](https://openweathermap.org/api) to get real-time weather information. To do so we need to update the invoke-action function so as be able to call  Open weather API : 
 
 ```
-def invoke_api(fulfillment, slots):
+def invoke_action(fulfillment, prameters):
     print("\n\n\n\n\n=========> CALL API ",fulfillment)
     if fulfillment == "GetWeather_fulfillment":
-        for slot in slots:
-             if slot['name']=="city":
-                 q=str(slot['value'])
-        appid=getAPI_credential('api.openweathermap','appid')
-        url = 'http://api.openweathermap.org/data/2.5/weather?q='+q+'&appid='+appid
+        for prameter in prameters:
+             if prameter['name']=="city":
+                 city=str(prameter['value'])
+        appid="25e5d7b2fff948d0749a8b9e9e14f5f9"
+        url = 'http://api.openweathermap.org/data/2.5/weather?q='+city+'&appid='+appid
         result = requests.get(url)
         jsonResult = result.json()
         if result.status_code == 200:
