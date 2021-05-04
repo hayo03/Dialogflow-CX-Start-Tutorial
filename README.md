@@ -136,14 +136,14 @@ After completing both flows, the agent will be able to handle user requests abou
   <img src="images/reuse_info.png">
 </p>
 
-To avoid such an issue, the agent needs to exploit the context well, i.e.,  any information that can be leveraged from the previous conversation turns or any other sources (e.g., user profile). In this tutorial, we are interested in exploiting the previous conversation turns as the main source for the context. Indeed, in Dialogflow CX,  there is an interesting feature called Parameter preset (in the fulfillment section) that allows to set or override the parameter values. So we will exploit this feature in order to reuse information from session parameters that represents the parameters fulfilled in the previous turns. To do so : <br>
+To avoid such an issue, the agent needs to exploit the context well, i.e.,  any information that can be leveraged from the previous conversation turns or any other sources (e.g., user profile). In this tutorial, we are interested in exploiting the previous conversation turns as the main source for the context. Indeed, in Dialogflow CX,  there is an interesting feature called <b>Parameter preset (in the fulfillment section)</b> that allows to set or override the parameter values. So we will exploit this feature in order to reuse information from session parameters that represents the parameters fulfilled in the previous turns. To do so : <br>
 1. Select “Get current weather” page in Weather forecast flow and edit the already defined route.
 2. Find Parameter preset feature within the fulfillment section.
 3. Click on Add Parameter and add the following:
    - Parameter: location; 
    - Value: "$session.params.city" 
-4. Follow the similar steps and add (Parameter: city; Value: "$session.params.location") in “Search restaurant” page.
-5. Test again the agent, what do you notice? 
+4. Test again the agent, what do you notice? 
+5. Now what do we need to do to make the agent be able to reuse the location value in the Search restaurant flow for the city parameter in the Weather forecast flow? 
 ## <a name="webhook"></a>Building a webhook
 At this point, the created agent  can answer users only with static response messages. But in real cases, we need to generate dynamic responses, validate collected data, or trigger actions on the backend.  Webhooks are introduced to handle all of this.  They are simply the backend parts of the agent. The agent is the frontend part.
 
