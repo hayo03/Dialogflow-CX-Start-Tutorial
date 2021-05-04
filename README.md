@@ -312,7 +312,14 @@ def invoke_action(fulfillment, prameters):
 Test the updated webhook to check if it behaves properly.
 
 ## <a name="conclu"></a>Conclusion
-There are other interesting agent settings that we haven't covered, including integrations and event handlers. Overall, this tutorial covers most of the Dialogflow CX basics that every bot developer should be well-versed in toward building conversational agents doted with advanced capabilities.
+So far, we explored how to: 
+  - Create an agent.
+  - Create intents, parameters and entity types .
+  - Create flows, pages  and build links between them using routes 
+  - Reuse information between flows
+  - Create a webhook  
+
+There are other interesting agent features that we haven't covered, including integrations, event handlers and so more. Overall, this tutorial covers most of the Dialogflow CX basics that every bot developer should be well-versed in toward building conversational agents doted with advanced capabilities.
 <b> <i> Please send your feedback to hayet.brabra@liris.cnrs.fr.</i></b>
 
 
