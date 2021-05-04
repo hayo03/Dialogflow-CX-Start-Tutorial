@@ -145,7 +145,7 @@ To avoid such an issue, the agent needs to exploit the context well, i.e.,  any 
 4. Test again the agent, what do you notice? 
 5. Now what do we need to do to make the agent be able to reuse the location value in the Search restaurant flow for the city parameter in the Weather forecast flow? 
 ## <a name="webhook"></a>Building a webhook
-At this point, the created agent  can answer users only with static response messages. But in real cases, we need to generate dynamic responses, validate collected data, or trigger actions on the backend.  Webhooks are introduced to handle all of this.  They are simply the backend parts of the agent. The agent is the frontend part.
+At this point, the created agent  can answer users only with static response messages. But in real cases, we need to generate dynamic responses, validate collected data, or trigger actions on the backend.  Webhooks are introduced to handle all of this.  They are simply the backend parts of the agent.
 
 <p align="center">
   <img src="images/webhook.png">
