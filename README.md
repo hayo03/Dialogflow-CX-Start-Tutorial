@@ -155,8 +155,8 @@ As the diagram above shows, when a fulfillment  that has a webhook is called, th
 The webhook service receives the webhook request and takes any actions necessary, like calling external APIs, querying or updating a database, etc. It builds a response and sends it back to Dialogflow API. A webhook can be created in any server side programming language like Python, PHP or Node.js. We are going to use Python to create a webhook and Ngrok to deploy it. Let’s start building our webhook for handling weather forecast requests. 
 
 ## Creating a webhook service using Python
-Create a folder and name it as webhook_service). Under this folder, we are going to create the following two files: webhook.py, requirements.txt. 
-- webhook.py: it is the webhook service that will handle the requests sent from the Dialogflow agent and provide back a response. To keep it simple, we will create a webhook that gets parameters from an agent request and provides back a static response 
+Create a folder and name it as webhook_service. Under this folder, we are going to create the following two files: webhook.py, requirements.txt. 
+- webhook.py: it is the webhook service that will handle the requests sent from the Dialogflow agent and provide back a response. To keep it simple, we will create a webhook that gets parameters from an agent request and provides back a static response.  
 
 ```
 #### minimal set of required modules
