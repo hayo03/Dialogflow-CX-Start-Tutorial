@@ -218,7 +218,7 @@ def invoke_action(fulfillment,  prameters):
         msg="There are overcast clouds in "+city
         return msg
 ```
-- answer_webhook(msg): processes the webhook answer which should follow a particular JSON format.
+- answer_webhook(msg): processes the webhook answer that should follow a particular JSON format.
 ```
 def answer_webhook(msg):
     message= {"fulfillment_response": {
