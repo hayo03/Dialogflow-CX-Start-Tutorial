@@ -31,7 +31,7 @@ During this tutorial, we will need to use Python as a programming language, visu
    - Select "English" as default language for your agent.<br>
 4. Click Save.<br> 
 
-## <a name="welcomemessage "></a>Exploring the created agent 
+## <a name="welcomemessage"></a>Exploring the created agent 
 The created agent has a default Start Flow with a start page that comes with default welcome intent. Within this default setting, the agent can handle a basic conversation with only a welcome message.
 
 ![tt](images/agent_default.png)
