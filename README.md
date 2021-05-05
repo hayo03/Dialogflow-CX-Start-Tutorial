@@ -245,9 +245,8 @@ requests
 Open terminal, create a virtual environment and install required packages.
  - Operating system: macOS/OS X, Linux; 
 ```
-pip install virtualenv
 cd webhook_service
-virtualenv -p python3 myenv
+python3 -m venv myenv
 source myenv/bin/activate
 pip install -r requirements.txt
 python webhook.py
