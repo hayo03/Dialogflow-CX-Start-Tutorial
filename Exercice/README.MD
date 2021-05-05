@@ -17,14 +17,14 @@ To create this flow, you will almost follow the steps taken for Weather forecast
 3. Create a Route that transitions from the default start flow to Restaurant reservation flow. 
       - Intent: restaurant.search
       - Transition to the Flow: Restaurant reservation flow
-4. Create Page named "Search restaurant" that will collect the location information where users search in and kind of food they prefer. 
+4. Create Page named "Collect food and location" that will collect the location information where users search in and kind of food they prefer. 
     - Parameters: 
         - name: Location; Entity type: @sys.geo_city
         - name: food; Entity type: @food; 
-5. Create a Route that transitions from the Restaurant reservation flow to Search restaurant page. 
+5. Create a Route that transitions from the Restaurant reservation flow to "Collect food and location" page. 
       - Intent: restaurant.search
-      - Transition to the Page: Search restaurant
-6. Create a Route that transitions from the search restaurant page to EndFlow page. 
+      - Transition to the Page: Collect food and location
+6. Create a Route that transitions from the "Collect food and location" page to EndFlow page. 
       - Condition: $page.params.status="FINAL"
       - Fulfillement:  This one serves $session.params.food food: Helow world Restaurant, Phone: +0000000, address : Helow world street, $session.params.location
       - Transition to the Page: End Flow
