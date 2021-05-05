@@ -72,7 +72,7 @@ So far, the agent has one flow with the start page. In this section, we will add
 By default, the Weather forecast flow has a special page named Start. When a flow initially becomes active, this page becomes the current active page. A start page does not have parameters or response messages like normal pages. So we need to create pages that will collect city information from user and handle his/her request (i.e., provide answers to the user). <br>
  1. Click on "Start" page in Weather forecast flow 
  2. Click the add + button in the Pages section.
- 3. Enter "Get current weather" as a display name for the page.
+ 3. Enter "Collect city" as a display name for the page.
  4. Click the settings more_vert button next to the page display name and select Edit.
  5. Create a new parameter:<br>
    - Parameter name: city<br>
@@ -95,7 +95,7 @@ As you notice there is no link between different flows (i.e., Default Start Flow
    - Click the Start node in the graph. 
    - Add the following intent route:
        - Intent: weather.current
-       - Transition: choose Page  and select “Get current weather” page
+       - Transition: choose Page  and select “Collect city” page
     - Click Save
 
 3. Create a route that transitions from “Get current weather" page to End Flow page: this route should be called when all parameters are fulfilled. To create this route: <br> 
