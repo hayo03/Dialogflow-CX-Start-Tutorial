@@ -5,7 +5,7 @@ from flask import Response, request
 import requests
 
 
-###create a web app using Flask
+#### initialize a flask app for our webhook
 app = Flask(__name__)
 
 
