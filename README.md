@@ -114,6 +114,7 @@ Congratulations! Now you can test your agent to test if your flow is correctly c
 2. Enter "What does the weather forecast look like?" and press enter.<br>
 3. The agent will request you to provide the city and then provides you the weather forecast.<br>
 
+
 ## <a name="exercise"></a>Exercise
 Considering the following conversation example:
 <br clear="left">
