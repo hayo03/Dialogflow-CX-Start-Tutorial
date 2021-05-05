@@ -4,7 +4,7 @@
 - ##### [Introduction](#intro)
 - ##### [Environnement Installation](#install)
 - ##### [Dialogflow CX Setup ](#Setup)
-- ##### [Creating a simple welcome message](#welcomemessage)
+- ##### [Exploring the created agent](#welcomemessage)
 - ##### [Managing Flows & Pages](#FlowsandPages)
 - ##### [Exercise](#exercise)
 - ##### [Reusing information between flows](#reuseinformation)
