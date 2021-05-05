@@ -1,0 +1,20 @@
+{"fulfillment_response": { //The fulfillment response to send to the user.  
+      
+    "messages": [
+    {
+      "text": {
+        "text": ""
+      }
+    }
+  ]
+},
+"page_info":{  //Intend to modify page status.
+    "current_page":"string",
+    "form_info":{
+        "parameter_info":[{"display_name": "string","required":"bool", "value":"value"}]
+    }
+},
+"session_info":{}, //Intend to modify session status.
+"target_page": "string", //The target page to transition to
+"target_flow": "string" //The target flow to transition to
+}
