@@ -8,13 +8,14 @@
     }
   ]
 },
-"page_info":{  //Intend to modify page status.
+"page_info":{  //Intend to modify page status. change a parameter state or value 
     "current_page":"string",
     "form_info":{
-        "parameter_info":[{"display_name": "string","required":"bool", "value":"value"}]
+        "parameter_info":[{"display_name": "string","required":"bool", "state": "INVALID, EMPTY, or FILLED","value":"value", "just_collected":"bool"}]
     }
 },
-"session_info":{}, //Intend to modify session status.
+"session_info":{"session":"string", "parameters":{"prameter name":"prameter value"}}, //Intend to modify session status:  create, update, or remove a parameter. 
+// To remove a parameter from the session, the webhook should explicitly set the parameter value to null.
 "target_page": "string", //The target page to transition to
 "target_flow": "string" //The target flow to transition to
 }
