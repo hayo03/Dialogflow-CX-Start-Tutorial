@@ -307,6 +307,11 @@ Previously, we created two simple flows (i.e., weather forecast and restaurant r
 <img src="images/restaurant_reservation.png" width="400"> 
 <img src="images/flow_rest_reservation.png" width="500"> 
 </p>
+
+1. Select the Build tab.
+2. Click Flows.
+3. Click Create and enter Weather forecast as a flow name. 
+
 1. Create intents "Reservation.YES" and "Reservation.NO".
 2. Select the flow "Restaurant reservation" and add these two pages:
     - Page name: "Reservation"
