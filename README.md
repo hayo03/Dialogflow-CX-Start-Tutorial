@@ -302,8 +302,10 @@ def invoke_action(fulfillment, prameters):
 - ##### [Reusing information between flows](#reuseinformation)
 
 ## <a name="multipleintents"></a>Handling multiple intents
+<p align="center">
+<img src="images/flow_rest_reservation.png" width="200">
 <img src="images/restaurant_reservation.png">  
-<img src="images/flow_rest_reservation.png">
+</p>
 
 ## <a name="reuseinformation"></a>Reusing information between flows
 After completing both flows, the agent will be able to handle user requests about both weather forecast and restaurant reservation. However, when you interact with the agent, you will notice that it may ask you for information that you already provided. As shown below, the agent asks the user "what is your location" despite the fact that he already provided his/her city in one of the previous turns. <br> 
