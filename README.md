@@ -297,34 +297,6 @@ def invoke_action(fulfillment, prameters):
 ```
 
 - Test the updated webhook to check if it behaves properly.
-- <b> More about the webhook response: </b> Although the created webhook provides only a text answer to the Dialogflow agent, in general, it can do more than this: 
- - update the current page information
- - update the session information
- - update the target page or flow 
- 
- ```
- {"fulfillment_response": { 
-      
-    "messages": [
-    {
-      "text": {
-        "text": ""
-      }
-    }
-  ]
-},
-"page_info":{  
-    "current_page":"string",
-    "form_info":{
-        "parameter_info":[{"display_name": "string","required":"bool", "state": "INVALID, EMPTY, or FILLED","value":"value", "just_collected":"bool"}]
-    }
-},
-"session_info":{"session":"string", "parameters":{"prameter name":"prameter value"}}, 
-"target_page": "string", 
-"target_flow": "string" 
-}
-
-```
 ## <a name="complexconversations"></a>Designing more complex conversations
 - ##### [Handling multiple intents](#multipleintents)
 - ##### [Reusing information between flows](#reuseinformation)
@@ -332,7 +304,7 @@ def invoke_action(fulfillment, prameters):
 ## <a name="multipleintents"></a>Handling multiple intents
 
 <p align="center">
-  <img src="images/restaurant_reservation.png">  <img src="images/Weather-forecast-flow.png">
+  <img src="images/restaurant_reservation.png">  <img src="images/flow_rest_reservation.png">
 </p>
 
 ## <a name="reuseinformation"></a>Reusing information between flows
