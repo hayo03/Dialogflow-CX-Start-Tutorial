@@ -303,8 +303,8 @@ def invoke_action(fulfillment, prameters):
 
 ## <a name="multipleintents"></a>Handling multiple intents
 <p align="center">
-<img src="images/flow_rest_reservation.png" width="200">
-<img src="images/restaurant_reservation.png">  
+<img src="images/flow_rest_reservation.png" width="50">
+<img src="images/restaurant_reservation.png" width="90">  
 </p>
 
 ## <a name="reuseinformation"></a>Reusing information between flows
