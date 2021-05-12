@@ -8,7 +8,7 @@
 - ##### [Managing Flows & Pages](#FlowsandPages)
 - ##### [Exercise](#exercise)
 - ##### [Building a webhook](#webhook)
-- ##### [Reusing information between flows](#reuseinformation)
+- #####[Designing more complex conversations](#complex conversations)
 - ##### [Conclusion](#conclu)
 
 
@@ -296,6 +296,11 @@ def invoke_action(fulfillment, prameters):
 
 - Test the updated webhook to check if it behaves properly.
 - (Exercise)
+## <a name="complex conversations"></a>Designing more complex conversations
+- #####[Handling multiple intents](#multiple intents)
+- #####[Reusing information between flows](#reuseinformation)
+
+## <a name="multiple intents"></a>Handling multiple intents
 
 ## <a name="reuseinformation"></a>Reusing information between flows
 After completing both flows, the agent will be able to handle user requests about both weather forecast and restaurant reservation. However, when you interact with the agent, you will notice that it may ask you for information that you already provided. As shown below, the agent asks the user "what is your location" despite the fact that he already provided his/her city in one of the previous turns. <br> 
