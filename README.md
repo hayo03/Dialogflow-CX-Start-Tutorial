@@ -317,7 +317,7 @@ Previously, we created two simple flows (i.e., weather forecast and restaurant r
 4. Add two routes to "Reservation" page.
     - Route 1: Put intent as "Reservation.NO", Fulfillment as "Come visit us again when you get hungry! Bye 👋", and transition to "End Flow" page.
     - Route 2: Put intent as "Reservation.YES" and transition to "Collect seats and date-time" page.
-5. Add a route to "Collect seats and date-time" page. 
+5. Add a route to "Collect seats and date-time" page.
     - Put condition as $page.params.status="FINAL", Fulfillment as "Done! I have booked a table for $session.params.seats people on $session.params.date-time.", and transition to "End Flow" page.
   
 ## <a name="reuseinformation"></a>Reusing information between flows
