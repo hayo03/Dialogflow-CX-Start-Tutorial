@@ -295,7 +295,6 @@ def invoke_action(fulfillment, prameters):
 ```
 
 - Test the updated webhook to check if it behaves properly.
-- (Exercise)
 ## <a name="complexconversations"></a>Designing more complex conversations
 - ##### [Handling multiple intents](#multipleintents)
 - ##### [Reusing information between flows](#reuseinformation)
