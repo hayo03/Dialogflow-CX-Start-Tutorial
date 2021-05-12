@@ -304,7 +304,7 @@ def invoke_action(fulfillment, prameters):
 ## <a name="multipleintents"></a>Handling multiple intents
 Previously, we created two simple flows (i.e., weather forecast and restaurant reservation). In this part, we show you how to design a flow to allow the bot to choose different routes depending on the user intent. Let's extend the "restaurant reservation" flow to allow the user to make a reservation if she/he wants, or the bot says goodbye to the user if she/he doesn't want to make a reservation. To support this scenario, we need to create two new intents "Reservation.YES" and "Reservation.NO".
 <p align="center">
-<img src="images/restaurant_reservation.png" width="400"> 
+<img src="images/restaurant_reservation.png" width="350"> 
 <img src="images/flow_rest_reservation.png" width="500"> 
 </p>
 
