@@ -8,7 +8,7 @@
 - ##### [Managing Flows & Pages](#FlowsandPages)
 - ##### [Exercise](#exercise)
 - ##### [Building a webhook](#webhook)
-- #####[Designing more complex conversations](#complex conversations)
+- #####[Designing more complex conversations](#complexconversations)
 - ##### [Conclusion](#conclu)
 
 
@@ -296,7 +296,7 @@ def invoke_action(fulfillment, prameters):
 
 - Test the updated webhook to check if it behaves properly.
 - (Exercise)
-## <a name="complex conversations"></a>Designing more complex conversations
+## <a name="complexconversations"></a>Designing more complex conversations
 - #####[Handling multiple intents](#multiple intents)
 - #####[Reusing information between flows](#reuseinformation)
 
