@@ -10,7 +10,7 @@
       "formInfo":{
          "parameterInfo":[
             {
-               "displayName":"City",
+               "displayName":"city",
                "required":true,
                "state":"FILLED",
                "value":"Paris"
