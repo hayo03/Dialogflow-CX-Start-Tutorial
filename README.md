@@ -303,7 +303,7 @@ def invoke_action(fulfillment, prameters):
 
 ## <a name="multipleintents"></a>Handling multiple intents
 <p align="center">
-<img src="images/flow_rest_reservation.png" width="5">
+<img src="images/flow_rest_reservation.png" width="500">
 <img src="images/restaurant_reservation.png" width="5">  
 </p>
 
