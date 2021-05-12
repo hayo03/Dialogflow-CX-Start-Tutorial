@@ -294,7 +294,8 @@ def invoke_action(fulfillment, prameters):
             return "Something wrong with the API."
 ```
 
-Test the updated webhook to check if it behaves properly.
+- Test the updated webhook to check if it behaves properly.
+- (Exercise)
 
 ## <a name="reuseinformation"></a>Reusing information between flows
 After completing both flows, the agent will be able to handle user requests about both weather forecast and restaurant reservation. However, when you interact with the agent, you will notice that it may ask you for information that you already provided. As shown below, the agent asks the user "what is your location" despite the fact that he already provided his/her city in one of the previous turns. <br> 
@@ -310,7 +311,7 @@ To avoid such an issue, the agent needs to exploit the context well, i.e.,  any 
    - Parameter: location; 
    - Value: "$session.params.city" 
 4. Test again the agent, what do you notice? 
-5. Now what do we need to do to make the agent be able to reuse the location value in the Search restaurant flow for the city parameter in the Weather forecast flow? 
+5. (Exercise) Now what do we need to do to make the agent be able to reuse the location value in the Search restaurant flow for the city parameter in the Weather forecast flow? 
 
 ## <a name="conclu"></a>Conclusion
 So far, we explored how to: 
