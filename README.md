@@ -289,7 +289,7 @@ def invoke_action(fulfillment, prameters):
         jsonResult = result.json()
         if result.status_code == 200:
             weatherCondition = jsonResult['weather'][0]['description']
-            reply = "There is {} in there.".format(weatherCondition)
+            reply = "There is {} there.".format(weatherCondition)
             print(reply)
             return reply
         else:
