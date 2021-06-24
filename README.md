@@ -127,7 +127,8 @@ Considering the following conversation example:
 2. Once you identified the required design, add it to the Demo agent. 
 3. Test your Demo agent to check whether what you created will lead to the given conversation example.
 
-</br>
+
+
 ## <a name="webhook"></a>Building a webhook
 At this point, the created agent  can answer users only with static response messages. But in real cases, we need to generate dynamic responses, validate collected data, or trigger actions on the backend.  Webhooks are introduced to handle all of this.  They are simply the backend parts of the agent.
 
