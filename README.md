@@ -126,11 +126,7 @@ Considering the following conversation example:
     - What are the required routes to support this case? 
 2. Once you identified the required design, add it to the Demo agent. 
 3. Test your Demo agent to check whether what you created will lead to the given conversation example.
-```
-5. <b> (Home exercise) Complete the whole flow that should lead to a conversation like the following conversation example.</b>
 
-  ![tt](images/reservation_example.png)
-```
 </br>
 ## <a name="webhook"></a>Building a webhook
 At this point, the created agent  can answer users only with static response messages. But in real cases, we need to generate dynamic responses, validate collected data, or trigger actions on the backend.  Webhooks are introduced to handle all of this.  They are simply the backend parts of the agent.
