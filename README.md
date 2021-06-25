@@ -219,13 +219,18 @@ def answer_webhook(msg):
     }
     return Response(json.dumps(message), 200, mimetype='application/json')
 ```
-Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/webhook_service/webhook.py) for the full webhook script that we've built.
 
 - requirements.txt: contain the libraries required to create the webhook service, namelly flask and requests.
 ```
 flask
 requests
 ```
+
+Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/webhook_service/webhookrequest.json) for the full webhook body request. 
+Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/webhook_service/webhookresponse.jsonc) for the full webhook body response.
+Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/webhook_service/webhook.py) for the full webhook script that we've built.
+
+
 ## Run the webhook service
 Open terminal, create a virtual environment and install required packages.
  - Operating system: macOS/OS X, Linux; 
