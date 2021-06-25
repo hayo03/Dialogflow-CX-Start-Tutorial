@@ -226,12 +226,13 @@ flask
 requests
 ```
 
-Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/webhook_service/webhookrequest.json) for the full webhook body request. 
-Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/webhook_service/webhookresponse.jsonc) for the full webhook body response.
-Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/webhook_service/webhook.py) for the full webhook script that we've built.
+Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/webhook_service/webhookrequest.json) for the full webhook body request. <br> 
+Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/webhook_service/webhookresponse.jsonc) for the full webhook body response. <br>
+Check [here](https://github.com/hayo03/Dialogflow-CX-Start-Tutorial/blob/main/webhook_service/webhook.py) for the full webhook script that we've built. <br>
 
 
 ## Run the webhook service
+
 Open terminal, create a virtual environment and install required packages.
  - Operating system: macOS/OS X, Linux; 
 ```
@@ -253,6 +254,7 @@ python webhook
 
 ```
 ## Deploy a webhook service using Ngrok
+
 In the terminal just run the following commends:
 
 ```
@@ -262,6 +264,7 @@ cd Path_To_Ngrok
 ```
 
 ## Setup webhook in Dialogflow and test it
+
 We need to first create a webhook and add it to the fulfillment in "Collect city" page:
 1. Create webhook 
    - Select the Manage tab.
@@ -276,6 +279,7 @@ We need to first create a webhook and add it to the fulfillment in "Collect city
 3. To test the webhook, click the Test Agent and enter "What does the weather forecast look like?". If everything is well settled, the agent should provide you the response text you provided.
 
 #### Update the webhook for invoking an external service
+
 At this point, our webhook can only get information and invoke a simple action that provides a static response about the weather conditions. But in real cases, we need to invoke one of the external services such as the well-known [Open weather API](https://openweathermap.org/api) to get real-time weather information. To do so we need to update the invoke-action function so as be able to call  Open weather API : 
 
 ```
