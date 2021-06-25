@@ -26,6 +26,6 @@ To create this flow, you will almost follow the steps taken for Weather forecast
       - Transition to the Page: Collect food and location
 6. Create a Route that transitions from the "Collect food and location" page to EndFlow page. 
       - Condition: $page.params.status="FINAL"
-      - Fulfillement:  This one serves $session.params.food food: Helow world Restaurant, Phone: +0000000, address : Helow world street, $session.params.location
+      - Fulfillement:  This one serves $session.params.food food: Hello world Restaurant, Phone: +0000000, address : Hello world street, $session.params.location
       - Transition to the Page: End Flow
 
