@@ -335,12 +335,13 @@ To avoid such an issue, the agent needs to exploit the context well, i.e.,  any 
 5. (Exercise) Now what do we need to do to make the agent be able to reuse the location value in the Search restaurant flow for the city parameter in the Weather forecast flow? 
 
 ## <a name="conclu"></a>Conclusion
-So far, we explored how to: 
+So far, we explored how to:   
+  - Setup a DF CX project
   - Create an agent.
   - Create intents, parameters and entity types .
-  - Create flows, pages  and build links between them using routes 
-  - Reuse information between flows
-  - Create a webhook  
+  - Create flows, pages and build links between them using routes
+  - Create a webhook and make call to an external service
+  - Design more complex conversations
 
 There are other interesting agent features that we haven't covered, including integrations, event handlers and so more. Overall, this tutorial covers most of the Dialogflow CX basics that every bot developer should be well-versed in toward building conversational agents doted with advanced capabilities.
 <b> <i> Please send your feedback to hayet.brabra@liris.cnrs.fr.</i></b>
