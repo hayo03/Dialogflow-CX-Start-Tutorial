@@ -353,7 +353,7 @@ So far, we explored how to:
   - Design more complex conversations
 
 There are other interesting agent features that we haven't covered, including integrations, event handlers and so more. Overall, this tutorial covers most of the Dialogflow CX basics that every bot developer should be well-versed in toward building conversational agents doted with advanced capabilities.
-<b> <i> Please send your feedback to hayet.brabra@liris.cnrs.fr.</i></b>
+<b> <i> Please send your feedback to brabra.hayeet@gmail.com</i></b>
 
 
 
